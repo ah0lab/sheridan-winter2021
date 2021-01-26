@@ -1,0 +1,52 @@
+CREATE TABLE Products
+(
+    Id INTEGER PRIMARY KEY,
+    Name TEXT NOT NULL,
+    ReviewId INTEGER,
+    BrandId INTEGER,
+    FOREIGN KEY (ReviewId)
+        REFERENCES Reviews (Id)
+        ON DELETE CASCADE
+        ON UPDATE NO ACTION,
+    FOREIGN KEY (BrandId)
+        REFERENCES Brands (Id)
+        ON DELETE CASCADE
+        ON UPDATE NO ACTION
+);
+CREATE TABLE Reviews 
+(
+    Id INTEGER PRIMARY KEY,
+    ReviewText TEXT,
+    ProductId INTEGER,
+    FOREIGN KEY (ProductId)
+        REFERENCES Products (Id)
+        ON DELETE CASCADE
+        ON UPDATE NO ACTION
+);
+CREATE TABLE Brands 
+(
+    Id INTEGER PRIMARY KEY,
+    Name TEXT 
+);
+
+INSERT INTO Brands (Id, Name) VALUES (1, "Happy Chump");
+INSERT INTO Brands (Id, Name) VALUES (2, "Bill & Bob");
+INSERT INTO Brands (Id, Name) VALUES (3, "Fancy Pantsy");
+
+INSERT INTO Products (Id, Name, BrandId) 
+    VALUES (1, "Power Poopers", 1);
+INSERT INTO Products (Id, Name, BrandId) 
+    VALUES (2, "Biggun Bottoms", 1);
+INSERT INTO Products (Id, Name, BrandId) 
+    VALUES (3, "Lip Chap", 2);
+INSERT INTO Products (Id, Name, BrandId) 
+    VALUES (4, "Long Bottoms", 3);
+INSERT INTO Products (Id, Name, BrandId) 
+    VALUES (5, "Hankie Pankies", 3);
+
+INSERT INTO Reviews (Id, ReviewText, ProductId) 
+    VALUES (1, "They said no one knew you'd be wearing them. But everyone at the office could see it.", 1);
+INSERT INTO Reviews (Id, ReviewText, ProductId) 
+    VALUES (2, "5 Stars!", 4);
+INSERT INTO Reviews (Id, ReviewText, ProductId) 
+    VALUES (3, "Would Poop in again!", 2); 
