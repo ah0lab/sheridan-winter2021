@@ -1,0 +1,28 @@
+﻿@page
+
+@model RazorPagesDemo.Pages.Actors.DetailsModel
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+<div>
+    <h4></h4>
+    <hr />
+    <dl>
+        <dt>@Html.DisplayNameFor(model => model.Actor.Firstname)</dt>
+        <dd>@Html.DisplayFor(model => model.Actor.Firstname)</dd>
+        <dt>@Html.DisplayNameFor(model => model.Actor.Lastname)</dt>
+        <dd>@Html.DisplayFor(model => model.Actor.Lastname)</dd>
+        <dt>@Html.DisplayNameFor(model => model.Actor.KnownFor)</dt>
+        <dd>@Html.DisplayFor(model => model.Actor.KnownFor)</dd>
+        <dt>@Html.DisplayNameFor(model => model.Actor.OscarWinner)</dt>
+        <dd>@Html.DisplayFor(model => model.Actor.OscarWinner)</dd>
+    </dl>
+    @if (Model.Actor.ImageName != "") {
+        <img src="~/images/@Model.Actor.ImageName" height="300" />
+    }
+</div>
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
