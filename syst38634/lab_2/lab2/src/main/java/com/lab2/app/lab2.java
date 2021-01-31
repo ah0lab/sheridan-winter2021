@@ -22,11 +22,11 @@ public class lab2
         return average / numbers.length;
     }
 
-    public static char[] GetMiddleChar (String string)
+    public static String GetMiddleChar (String string)
     {
         char middleChar[] = {' ', ' '};
 
-        if (string.length() == 0) return middleChar;
+        if (string.length() == 0) return middleChar.toString();
 
         if (string.length() % 2 == 0) {
             string.getChars (
@@ -34,11 +34,11 @@ public class lab2
                 (string.length() / 2) + 1,
                 middleChar, 0);
 
-            return middleChar;
+            return middleChar.toString();
         } else {
             middleChar[0] = string.charAt (string.length() / 2);
         }
             
-        return middleChar;
+        return middleChar.toString();
     }
 }
