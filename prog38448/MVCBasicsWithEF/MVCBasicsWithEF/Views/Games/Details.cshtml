@@ -1,0 +1,20 @@
+@model MVCBasicsWithEF.Models.Game
+
+@{
+    ViewData["Title"] = "Game Details";
+    Layout = "_Layout";
+}
+
+<h2>Game Details</h2>
+<table class="table">
+    <tr>
+        <td>@Html.DisplayNameFor(model => model.Title)</td>
+        <td>@Html.DisplayFor(model=>model.Title)</td>
+    </tr>
+    <tr>
+        <td>@Html.DisplayNameFor(model=>model.Year)</td>
+        <td>@Html.DisplayNameFor(model=>model.Year)</td>
+    </tr>
+</table>
+<a asp-action="Edit" asp-route-id="@Model.Id">Edit</a>
+<a asp-action="Index">Back to Game List</a>
