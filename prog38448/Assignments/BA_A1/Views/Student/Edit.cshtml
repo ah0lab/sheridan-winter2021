@@ -1,0 +1,36 @@
+@model BA_A1.Models.Student
+
+@{
+    ViewData["Title"] = "Student Details";
+    Layout = "_Layout";
+}
+
+<section class="student-details--edit">
+    <header>
+        <h2>Edit Student Details</h2>
+        <h4>
+            @Html.DisplayFor(model => model.FirstName)
+            @Html.DisplayFor(model => model.LastName)
+        </h4>
+    </header>
+    <hr/>
+    <form asp-action="Edit">
+        <fieldset>
+            <legend>Personal</legend>
+            <label asp-for="FirstName"></label>
+            <input asp-for="FirstName"/>
+            <label asp-for="LastName"></label>
+            <input asp-for="LastName"/>
+        </fieldset>
+        <fieldset>
+            <legend>Contact</legend>
+            <label asp-for="Email"></label>
+            <input asp-for="Email"/>
+            <label asp-for="PhoneNumber"></label>
+            <label asp-for="PhoneNumber"></label>
+        </fieldset>
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Update Student Info" />
+    </form>
+    <a asp-action="Index">Back to Student Directory</a>
+</section>

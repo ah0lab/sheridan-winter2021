@@ -1,0 +1,51 @@
+@model IEnumerable<BA_A1.Models.Student>
+
+@{
+    ViewData["Title"] = "Student Directory";
+}
+
+<section class="student-directory">
+    <h1>Student Directory</h1>
+    <a asp-action="Create" >Create a New Student</a>
+    <table>
+        <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.Id)</th>
+            <th>@Html.DisplayNameFor(model => model.FirstName)</th>
+            <th>@Html.DisplayNameFor(model => model.LastName)</th>
+            <th>@Html.DisplayNameFor(model => model.Email)</th>
+            <th>@Html.DisplayNameFor(model => model.PhoneNumber)</th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var student in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(model => student.Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => student.FirstName)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => student.LastName) 
+                </td>
+                <td>
+                    @Html.DisplayFor(model => student.Email)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => student.PhoneNumber)
+                </td>
+                <td>
+                    <ul>
+                        <li><a asp-action="Details" asp-route-id="@student.Id">Details</a></li>
+                        <li><a asp-action="Edit" asp-route-id="@student.Id">Edit</a></li>
+                        <li><a asp-action="Delete" asp-route-id="@student.Id">Delete</a></li>
+                    </ul>
+                </td>
+                   
+            </tr>
+        }
+        </tbody>
+    </table>
+</section>

@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>@ViewData["Title"] - Assignment 1</title>
+    <link rel="stylesheet" href="~/css/style.css"/>
+</head>
+<body>
+<header>
+    <nav> 
+        <a asp-area="" asp-controller="Home" asp-action="Index">Assignment 1</a>
+        <ul class="navbar-nav flex-grow-1">
+            <li class="nav-item">
+                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-dark" asp-area="" asp-controller="Student" asp-action="Index">Students</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+<main role="main">
+    <section>
+        @RenderBody()
+    </section>
+</main>
+
+<footer class="border-top footer text-muted">
+    
+</footer>
+
+<script src="~/js/site.js" asp-append-version="true"></script>
+@RenderSection("Scripts", required: false)
+</body>
+</html>

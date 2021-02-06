@@ -1,0 +1,37 @@
+@model BA_A1.Models.Student
+
+@{
+    ViewData["Title"] = "Student Details";
+    Layout = "_Layout";
+}
+
+<section class="student-details">
+    <header>
+        <h2>Student Details</h2>
+        <h4>
+            @Html.DisplayFor(model => model.FirstName)
+            @Html.DisplayFor(model => model.LastName)
+        </h4>
+    </header>
+    <hr/>
+    <table>
+        <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.Id)</th>
+            <th>@Html.DisplayNameFor(model => model.Email)</th>
+            <th>@Html.DisplayNameFor(model => model.PhoneNumber)</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>@Html.DisplayFor(model => model.Id)</td>
+            <td>@Html.DisplayFor(model => model.Email)</td>
+            <td>@Html.DisplayFor(model => model.PhoneNumber)</td>
+        </tr>
+        </tbody>
+    </table>
+    <nav>
+        <a asp-action="Index">Back to Student Directory</a>
+        <a asp-action="Edit" asp-route-id="model.Id">Edit</a>
+    </nav>
+</section>
