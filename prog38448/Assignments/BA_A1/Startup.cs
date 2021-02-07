@@ -52,15 +52,15 @@ namespace BA_A1
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             
-            app.UseAuthorization();
-            
             app.UseRouting();
 
+            app.UseAuthorization();
+            
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                    pattern: "{controller=Student}/{action=Index}/{id?}");
             });
 
         }

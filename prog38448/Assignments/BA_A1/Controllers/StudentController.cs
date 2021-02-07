@@ -6,8 +6,6 @@ using Microsoft.EntityFrameworkCore;
 using BA_A1.Models;
 using BA_A1.Data;
 
-using BA_A1.Data;
-
 namespace BA_A1.Controllers
 {
     public class StudentController : Controller
@@ -26,12 +24,27 @@ namespace BA_A1.Controllers
             return View(_context.Students.ToList());
         }
 
+        public IActionResult Create() => View();
+
+        [HttpPost]
+        public IActionResult Create(
+            [Bind("FirstName, LastName, Email, PhoneNumber")]Student student)
+        {
+            if (!ModelState.IsValid) return View(student);
+            
+            _context.Add(student);
+            _context.SaveChanges();
+
+            return RedirectToAction("Index");
+            
+        }
+
         public IActionResult Details(int? id)
         {
             if (id == null) return NotFound();
 
             //Student student = _context.Students.Where(s => s.Id == id).FirstOrDefault();
-            Student student = _context.Students.FirstOrDefault(s=> s.Id == id);
+            var student = _context.Students.FirstOrDefault(s => s.Id == id);
 
             if (student == null) return NotFound();
             
@@ -42,7 +55,7 @@ namespace BA_A1.Controllers
         {
             if (id == null) return NotFound();
 
-            Student student = _context.Students.FirstOrDefault(s => s.Id == id);
+            var student = _context.Students.FirstOrDefault(s => s.Id == id);
 
             if (student == null) return NotFound();
             
@@ -50,20 +63,41 @@ namespace BA_A1.Controllers
         }
 
         [HttpPost]
-        public IActionResult Details(int id, 
+        public IActionResult Edit(int id, 
             [Bind("Id,FirstName,LastName,Email,PhoneNumber")] Student student)
         {
             if (id != student.Id) return NotFound();
 
-            if (ModelState.IsValid)
-            {
-                _context.Update(student);
-                _context.SaveChanges();
+            if (!ModelState.IsValid) return View(student);
+            
+            _context.Update(student);
+            _context.SaveChanges();
 
-                return RedirectToAction("Index");
-            }
+            return RedirectToAction("Index");
+        }
+
+        public IActionResult Delete(int? id)
+        {
+            if (id == null) return NotFound();
+
+            var student = _context.Students.FirstOrDefault(s => s.Id == id);
+
+            if (student == null) return NotFound();
 
             return View(student);
+        }
+
+        [HttpPost, ActionName("Delete")]
+        public IActionResult DeleteConfirm(int id)
+        {
+            var student = _context.Students.FirstOrDefault(s => s.Id == id);
+
+            if (!ModelState.IsValid) return NotFound();
+
+            _context.Remove(student);
+            _context.SaveChanges();
+
+            return RedirectToAction("Index");
         }
     }
 }
