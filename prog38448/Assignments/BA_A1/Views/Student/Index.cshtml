@@ -2,11 +2,14 @@
 
 @{
     ViewData["Title"] = "Student Directory";
+    Layout = "_Layout";
 }
 
 <section class="student-directory">
     <h1>Student Directory</h1>
-    <a asp-action="Create" asp-controller="Student" >Create a New Student</a>
+    <a asp-action="Create" asp-controller="Student">Create a New Student</a>
+    <hr/>
+    
     <table>
         <thead>
         <tr>
@@ -15,6 +18,7 @@
             <th>@Html.DisplayNameFor(model => model.LastName)</th>
             <th>@Html.DisplayNameFor(model => model.Email)</th>
             <th>@Html.DisplayNameFor(model => model.PhoneNumber)</th>
+            <th> <th>
         </tr>
         </thead>
         <tbody>

@@ -7,28 +7,30 @@
     <link rel="stylesheet" href="~/css/style.css"/>
 </head>
 <body>
-<header>
-    <nav> 
-        <a asp-area="" asp-controller="Home" asp-action="Index">Assignment 1</a>
-        <ul class="navbar-nav flex-grow-1">
-            <li class="nav-item">
-                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+
+<header class="project-header">
+    <h2 class="initials">B.A</h2>
+    <nav class="project-nav">
+        <a asp-area="" asp-controller="Student" asp-action="Index">Assignment 1</a>
+        <ul class="nav-links">
+            <li>
+                <a class="nav-link" asp-controller="Home" asp-action="Index">Home</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link text-dark" asp-area="" asp-controller="Student" asp-action="Index">Students</a>
+            <li>
+                <a class="nav-link" asp-controller="Student" asp-action="Index">Students</a>
             </li>
         </ul>
     </nav>
 </header>
 
 <main role="main">
-    <section>
+    <section class="project-main">
         @RenderBody()
     </section>
 </main>
 
 <footer class="border-top footer text-muted">
-    
+
 </footer>
 
 <script src="~/js/site.js" asp-append-version="true"></script>

@@ -5,7 +5,7 @@
     Layout = "_Layout";
 }
 
-<section class="student-details--edit">
+<section class="student-edit">
     <header>
         <h2>Edit Student Details</h2>
         <h4>
@@ -15,20 +15,22 @@
     </header>
     <hr/>
     <form asp-action="Edit">
-        <fieldset>
-            <legend>Personal</legend>
-            <label asp-for="FirstName"></label>
-            <input asp-for="FirstName"/>
-            <label asp-for="LastName"></label>
-            <input asp-for="LastName"/>
-        </fieldset>
-        <fieldset>
-            <legend>Contact</legend>
-            <label asp-for="Email"></label>
-            <input asp-for="Email"/>
-            <label asp-for="PhoneNumber"></label>
-            <label asp-for="PhoneNumber"></label>
-        </fieldset>
+        <section class="form-fields">
+            <fieldset>
+                <legend>Personal</legend>
+                <label asp-for="FirstName"></label>
+                <input asp-for="FirstName"/>
+                <label asp-for="LastName"></label>
+                <input asp-for="LastName"/>
+            </fieldset>
+            <fieldset>
+                <legend>Contact</legend>
+                <label asp-for="Email"></label>
+                <input asp-for="Email"/>
+                <label asp-for="PhoneNumber"></label>
+                <input asp-for="PhoneNumber"/>
+            </fieldset>
+        </section>
         <input type="hidden" asp-for="Id" />
         <input type="submit" value="Update Student Info" />
     </form>

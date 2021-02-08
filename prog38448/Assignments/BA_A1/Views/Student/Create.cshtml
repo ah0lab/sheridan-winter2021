@@ -2,26 +2,29 @@
 
 @{
     ViewData["Title"] = "Create New Student";
+    Layout = "_Layout";
 }
 
 
 <section class="student-create">
     <h2>Create A New Student</h2>
     <form asp-action="Create">
-        <fieldset>
-            <legend>Personal Info</legend>
-            <label asp-for="FirstName"></label>
-            <input asp-for="FirstName"/>
-            <label asp-for="LastName"></label>
-            <input asp-for="LastName"/>
-        </fieldset>
-        <fieldset>
-            <legend>Contact Info</legend>
-            <label asp-for="Email"></label>
-            <input asp-for="Email"/>
-            <label asp-for="PhoneNumber"></label>
-            <input asp-for="PhoneNumber"/>
-        </fieldset>
+        <section class="form-fields">
+            <fieldset>
+                <legend>Personal Info</legend>
+                <label asp-for="FirstName"></label>
+                <input asp-for="FirstName"/>
+                <label asp-for="LastName"></label>
+                <input asp-for="LastName"/>
+            </fieldset>
+            <fieldset>
+                <legend>Contact Info</legend>
+                <label asp-for="Email"></label>
+                <input asp-for="Email"/>
+                <label asp-for="PhoneNumber"></label>
+                <input asp-for="PhoneNumber"/>
+            </fieldset>
+        </section>
         <input type="hidden"/>
         <input type="submit" value="Add Student"/>
     </form>

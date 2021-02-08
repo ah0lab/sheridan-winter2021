@@ -1,0 +1,148 @@
+body {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: linear-gradient(#c8d6e5, #fff);
+    
+    font-family: sans-serif; 
+    color: #194fb3;
+}
+
+a {
+    font-weight: bold;
+    text-decoration: none;
+    color: #5f27cd;
+}   a:visited { color: #b3882b; }
+    a:hover   { color: #4fa6b3; }
+
+table {
+    border-collapse: collapse;
+}
+th, td { border-bottom: 1px solid white; }
+th { text-align: left; }
+
+fieldset {
+    border: 1px solid white;
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+label {
+    color: #b3882b;
+}
+
+legend { 
+    background-color: white;
+    font-weight: bold;
+}
+
+.project-header, .project-main {
+    max-width: 75%;
+    margin: 0 auto;
+    border: 3px solid #9034b3;
+    padding: 25px;
+    box-sizing: border-box;
+    background-color: #feca57;
+}
+
+.project-header { margin-bottom: 40px; }
+
+.project-nav, .initials, .project-main nav { 
+    display: inline-block; text-align: right;
+}
+
+.initials { padding-right: 100px; }
+
+.nav-links {
+    padding: 5px;
+    list-style: none;
+    display: inline-block;
+} .nav-links:before { content: '|'; }   
+  
+.nav-links li { display: inline; }
+    
+.nav-link {
+    margin: 0 5px;
+    text-decoration: none;
+    text-underline: none;
+}   .nav-link:visited {
+        color: #8395a7;
+    }
+    
+.project-main nav {
+    padding-top: 15px;
+}    
+.project-main nav a:nth-child(n+1):before {
+    content: '|';
+    padding: 0 5px;
+    color: #194fb3;
+    font-weight: normal;
+} 
+.project-main nav a:nth-child(1):before { content: ''; padding: 0} 
+
+.project-main header h2 { text-align: center; }
+
+/* #################################### 
+ * Details Styles
+ * #################################### 
+ */
+.home { padding: 10px; text-align: center; }
+
+
+/* #################################### 
+ * Student Directory Styles
+ * #################################### 
+ */
+
+.student-directory table {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.student-directory a {
+    display: block;
+    padding-left : 20px;
+    padding-bottom: 10px;
+}
+
+.student-create>form, .student-edit>form {
+    padding-bottom: 10px;
+}
+
+/* #################################### 
+ * Create & Edit Styles
+ * #################################### 
+ */
+.student-create>form, .student-edit>form { overflow: auto; }
+
+.student-create>form>.form-fields, .student-edit>form>.form-fields
+{ overflow: auto; padding: 10px 0; }
+.student-create>form fieldset, .student-edit>form fieldset 
+{ max-width: 50%; }
+
+.student-create>form>.form-fields>fieldset:nth-child(1),
+.student-edit>form>.form-fields>fieldset:nth-child(1) { float: left; }
+.student-create>form>.form-fields>fieldset:nth-child(2),
+.student-edit>form>.form-fields>fieldset:nth-child(2) { float: right; }
+
+.student-create>form>input[type=submit],
+.student-edit>form>input[type=submit] { display: block;}
+
+/* #################################### 
+ * Delete Styles
+ * #################################### 
+ */
+.student-delete table {
+    width: 50%;
+    margin: 0px auto;
+}
+.student-delete>form { padding: 10px 0; }
+.student-delete table tr>td:nth-child(1) { font-weight: bold; }
+
+/* #################################### 
+ * Details Styles
+ * #################################### 
+ */
+.student-details table {
+    width: 50%;
+    margin: 0px auto;
+}
