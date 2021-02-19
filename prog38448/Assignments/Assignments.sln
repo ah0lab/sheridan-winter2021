@@ -2,7 +2,7 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BA_A1", "BA_A1\BA_A1.csproj", "{25278E37-C370-4C25-B5DE-F74285959C78}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BA_A1_Test", "BA_A1_Test\BA_A1_Test.csproj", "{56C0BD06-592C-44FD-A1B4-2EA290A01D48}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BA_A2", "BA_A2\BA_A2.csproj", "{F2557F25-BEAD-478E-8A6A-B8ECB7752066}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -14,9 +14,9 @@ Global
 		{25278E37-C370-4C25-B5DE-F74285959C78}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{25278E37-C370-4C25-B5DE-F74285959C78}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{25278E37-C370-4C25-B5DE-F74285959C78}.Release|Any CPU.Build.0 = Release|Any CPU
-		{56C0BD06-592C-44FD-A1B4-2EA290A01D48}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{56C0BD06-592C-44FD-A1B4-2EA290A01D48}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{56C0BD06-592C-44FD-A1B4-2EA290A01D48}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{56C0BD06-592C-44FD-A1B4-2EA290A01D48}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F2557F25-BEAD-478E-8A6A-B8ECB7752066}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F2557F25-BEAD-478E-8A6A-B8ECB7752066}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F2557F25-BEAD-478E-8A6A-B8ECB7752066}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F2557F25-BEAD-478E-8A6A-B8ECB7752066}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
