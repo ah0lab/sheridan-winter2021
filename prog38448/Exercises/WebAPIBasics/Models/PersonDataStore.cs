@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 
 namespace WebAPIBasics.Models
 {
@@ -80,6 +81,38 @@ namespace WebAPIBasics.Models
                     }
                 }
             };
+        }
+        public Person GetById(int Id) => Persons.Find(p => p.Id == Id);
+
+        public List<Person> GetAll() => Persons;
+
+        public Person Add(Person p)
+        {
+            int maxId = Persons.Max(p => p.Id);
+
+            p.Id = ++maxId;
+            Persons.Add(p);
+            
+            return GetById(p.Id);
+        }
+
+        public Person Update(Person p)
+        {
+            Person op = GetById(p.Id);
+
+            op.FirstName = p.FirstName;
+            op.LastName = p.LastName;
+
+            return GetById(p.Id);
+        }
+
+        public Person Delete(int Id)
+        {
+            Person p = GetById(Id);
+
+            Persons.Remove(p);
+
+            return p;
         }
     }
 }

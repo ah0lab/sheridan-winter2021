@@ -9,11 +9,21 @@ namespace WebAPIBasics.Controllers
     [ApiController]
     public class SkillsController : Controller
     {
+        private readonly PersonDataStore _ds;
+        
+        public SkillsController(PersonDataStore ds)
+        {
+            _ds = ds;
+        }
+        
         [HttpGet]
         public IActionResult GetSkillsOfApplicant(int applicantId)
         {
-            PersonDataStore ds = new PersonDataStore();
-            Person p = ds.Persons.FirstOrDefault(p => p.Id == applicantId);
+            //PersonDataStore ds = new PersonDataStore();
+            //Person p = ds.Persons.FirstOrDefault(p => p.Id == applicantId);
+
+            //Person p = _ds.Persons.FirstOrDefault(p => p.Id == applicantId);
+            Person p = _ds.GetById(applicantId);
             
             if (p == null) return NotFound();
 

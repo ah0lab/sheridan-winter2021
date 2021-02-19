@@ -8,6 +8,8 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
+using WebAPIBasics.Models;
+
 namespace WebAPIBasics
 {
     public class Startup
@@ -17,6 +19,8 @@ namespace WebAPIBasics
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers().AddXmlSerializerFormatters();
+            
+            services.AddSingleton<PersonDataStore>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
