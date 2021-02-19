@@ -8,14 +8,30 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
+using Microsoft.Extensions.Configuration;
+using Microsoft.EntityFrameworkCore;
+using BA_A2.Data;
+
 namespace BA_A2
 {
     public class Startup
     {
+        public IConfiguration Config { get; }
+
+        public Startup(IConfiguration configuration)
+        {
+            Config = configuration;
+        }
         // This method gets called by the runtime. Use this method to add services to the container.
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+            string connString = Config.GetConnectionString("DefaultConnection");
+
+            services.AddDbContext<StudentContext>(
+                options => options.UseSqlite(connString));
+
+            services.AddControllers().AddXmlSerializerFormatters();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -30,7 +46,7 @@ namespace BA_A2
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapGet("/", async context => { await context.Response.WriteAsync("Hello World!"); });
+                endpoints.MapControllers();
             });
         }
     }
