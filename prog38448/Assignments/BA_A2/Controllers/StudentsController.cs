@@ -44,7 +44,9 @@ namespace BA_A2.Controllers
             _context.Add(s);
             _context.SaveChanges();
             
-            return Ok(NewStudent);
+            //return Ok(NewStudent);
+            return CreatedAtRoute("GetById", 
+                new {Id = NewStudent.Id}, NewStudent);
         }
 
         [HttpPut("{id}")]
@@ -53,7 +55,7 @@ namespace BA_A2.Controllers
             if (id != s.Id) return BadRequest();
             
             Student queriedStudent = _context.Students
-                .FirstOrDefault(s => s.Id == id);
+                .FirstOrDefault(student => student.Id == id);
             
             if (queriedStudent == null) return NotFound();
 

@@ -30,13 +30,16 @@ namespace BA_A2
 
             services.AddDbContext<StudentContext>(
                 options => options.UseSqlite(connString));
-
+            
             services.AddControllers().AddXmlSerializerFormatters();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, 
+            StudentContext context)
         {
+            context.Database.EnsureCreated ();
+            
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
