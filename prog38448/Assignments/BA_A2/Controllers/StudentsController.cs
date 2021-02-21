@@ -1,3 +1,4 @@
+using System;
 using Microsoft.AspNetCore.Mvc;
 using System.Linq;
 
@@ -44,6 +45,8 @@ namespace BA_A2.Controllers
             _context.Add(s);
             _context.SaveChanges();
             
+            _context.ChangeTracker.Clear();
+            
             //return Ok(NewStudent);
             return CreatedAtRoute("GetById", 
                 new {Id = NewStudent.Id}, NewStudent);
@@ -53,10 +56,10 @@ namespace BA_A2.Controllers
         public IActionResult UpdateStudent(int id, [FromBody] Student s)
         {
             if (id != s.Id) return BadRequest();
-            
+
             Student queriedStudent = _context.Students
                 .FirstOrDefault(student => student.Id == id);
-            
+
             if (queriedStudent == null) return NotFound();
 
             _context.Update(s);

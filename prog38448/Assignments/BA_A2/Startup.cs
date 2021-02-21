@@ -30,7 +30,7 @@ namespace BA_A2
 
             services.AddDbContext<StudentContext>(
                 options => options.UseSqlite(connString));
-            
+
             services.AddControllers().AddXmlSerializerFormatters();
         }
 
