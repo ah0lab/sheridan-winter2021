@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">PizzaOrder</string>
+    <string name="appheading_labeltext">Pizza Order</string>
+    <string name="deliveryswitch_labeltext">Delivery</string>
+    <string name="sizespinner_labeltext">Pizza Size</string>
+    <string name="toppings_labeltext">Toppings</string>
+    <string name="toppingsradio_meat_labeltext">Meat</string>
+    <string name="toppingsradio_cheese_labeltext">Cheese</string>
+    <string name="toppingsradio_veg_labeltext">Vegetables</string>
+    <string name="orderbutton_text">Order</string>
+    <string name="orderTotal_labeltext">Total: </string>
+    <string name="address_labeltext">Address</string>
+    <string name="deliverydetailsheading_labeltext">Delivery Details</string>
 </resources>

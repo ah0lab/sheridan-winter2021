@@ -8,49 +8,53 @@
         tools:context=".MainActivity">
     <Spinner
             android:layout_width="195dp"
-            android:layout_height="33dp" tools:layout_editor_absoluteX="108dp" android:id="@+id/sizeSpinner"
-            tools:layout_editor_absoluteY="292dp"/>
+            android:layout_height="33dp" android:id="@+id/sizeSpinner"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@+id/appIcon"
+            android:layout_marginTop="44dp"/>
     <Switch
-            android:text="Delivery"
+            android:text="@string/deliveryswitch_labeltext"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" android:id="@+id/switch_delivery" tools:layout_editor_absoluteY="488dp"
-            tools:layout_editor_absoluteX="161dp"/>
+            android:layout_height="wrap_content" android:id="@+id/switch_delivery"
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toppings" android:layout_marginTop="20dp"/>
     <TextView
-            android:text="Pizza Size"
+            android:text="@string/sizespinner_labeltext"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" android:id="@+id/lable_sizeSpinner"
+            android:layout_height="wrap_content" android:id="@+id/label_sizeSpinner"
             app:layout_constraintTop_toBottomOf="@+id/appIcon"
             app:layout_constraintBottom_toTopOf="@+id/sizeSpinner" app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent" app:layout_constraintVertical_bias="0.642"/>
     <TextView
-            android:text="Toppings"
+            android:text="@string/toppings_labeltext"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" android:id="@+id/lable_toppings"
+            android:layout_height="wrap_content" android:id="@+id/label_toppings"
             app:layout_constraintBottom_toTopOf="@+id/toppings"
             app:layout_constraintTop_toBottomOf="@+id/sizeSpinner" app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintVertical_bias="0.666"/>
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintVertical_bias="0.458"/>
     <RadioGroup
-            android:layout_width="100dp"
-            android:layout_height="91dp" tools:layout_editor_absoluteY="368dp"
+            android:layout_width="137dp"
+            android:layout_height="92dp"
             android:id="@+id/toppings" app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" app:layout_constraintHorizontal_bias="0.498">
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintHorizontal_bias="0.495"
+            app:layout_constraintTop_toBottomOf="@+id/sizeSpinner" android:layout_marginTop="44dp">
         <RadioButton
                 android:text="Meat"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content" android:id="@+id/topping_meat"/>
         <RadioButton
                 android:text="Cheese"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content" android:id="@+id/topping_cheese"/>
         <RadioButton
-                android:text="Vegitables"
-                android:layout_width="wrap_content"
+                android:text="@string/toppingsradio_veg_labeltext"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content" android:id="@+id/topping_veg"/>
     </RadioGroup>
     <TextView
-            android:text="TextView"
+            android:text="@string/appheading_labeltext"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" android:id="@+id/heading"
+            android:layout_height="wrap_content" android:id="@+id/app_heading"
             tools:text="Pizza Order" app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent"
             android:layout_marginTop="84dp" app:layout_constraintHorizontal_bias="0.498" android:textSize="24sp"/>
@@ -58,7 +62,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" app:srcCompat="@mipmap/pizza_fg" android:id="@+id/appIcon"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintTop_toBottomOf="@+id/heading"
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintTop_toBottomOf="@+id/app_heading"
             android:layout_marginTop="20dp" app:layout_constraintHorizontal_bias="0.498"/>
     <androidx.appcompat.widget.Toolbar
             android:layout_width="409dp"
@@ -67,36 +71,44 @@
             android:theme="?attr/actionBarTheme"
             android:minHeight="?attr/actionBarSize" tools:layout_editor_absoluteX="1dp" android:id="@+id/toolbar"/>
     <Button
-            android:text="Order"
+            android:text="@string/orderbutton_text"
             android:layout_width="80dp"
-            android:layout_height="42dp" android:id="@+id/button" tools:layout_editor_absoluteY="0dp"
-            tools:layout_editor_absoluteX="330dp"/>
+            android:layout_height="42dp" android:id="@+id/button_order" tools:layout_editor_absoluteY="0dp"
+            app:layout_constraintEnd_toEndOf="parent"/>
     <TextView
-            android:text="Total"
+            android:text="@string/orderTotal_labeltext"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" android:id="@+id/orderTotal" tools:layout_editor_absoluteY="10dp"
-            tools:layout_editor_absoluteX="16dp" android:textSize="24sp"/>
+            android:textSize="24sp" app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="16dp"/>
     <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:inputType="textPostalAddress"
             android:ems="10"
-            android:id="@+id/editTextTextPostalAddress" tools:layout_editor_absoluteY="612dp"
-            tools:layout_editor_absoluteX="99dp"/>
+            android:id="@+id/input_address"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintTop_toBottomOf="@+id/label_address"
+            app:layout_constraintVertical_bias="0.273"/>
     <TextView
-            android:text="Address"
+            android:text="@string/address_labeltext"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" android:id="@+id/textView6" tools:layout_editor_absoluteY="583dp"
-            tools:layout_editor_absoluteX="115dp"/>
+            android:layout_height="wrap_content" android:id="@+id/label_address"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/deliveryDetailsHeading" android:layout_marginTop="16dp"
+            app:layout_constraintHorizontal_bias="0.498"/>
     <TextView
-            android:text="Delivery Details"
+            android:text="@string/deliverydetailsheading_labeltext"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" android:id="@+id/textView5" tools:layout_editor_absoluteY="552dp"
-            tools:layout_editor_absoluteX="71dp"/>
+            android:layout_height="wrap_content" android:id="@+id/deliveryDetailsHeading"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/divider"
+            app:layout_constraintHorizontal_bias="0.501" android:layout_marginTop="16dp"/>
     <View
             android:id="@+id/divider"
             android:layout_width="409dp"
             android:layout_height="1dp"
             android:background="?android:attr/listDivider"
-            tools:layout_editor_absoluteX="1dp" tools:layout_editor_absoluteY="532dp"/>
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintTop_toBottomOf="@+id/switch_delivery"
+            android:layout_marginTop="24dp"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
