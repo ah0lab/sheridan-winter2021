@@ -1,0 +1,14 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>list-demo</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-list-header>Top Programming Languages</ion-list-header>
+    <ion-item *ngFor="let item of pgArray">
+      <ion-label>{{item}}</ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

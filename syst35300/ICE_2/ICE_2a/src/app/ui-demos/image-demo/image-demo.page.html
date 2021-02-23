@@ -1,0 +1,16 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Image Demo</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let i of images">
+      <ion-tumbnail slot="start">
+        <ion-img [src]="i.src"></ion-img>
+      </ion-tumbnail>
+      <ion-label>{{i.text}}</ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

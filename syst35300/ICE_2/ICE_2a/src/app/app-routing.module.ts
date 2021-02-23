@@ -39,6 +39,38 @@ const routes: Routes = [
     path: 'alert-demo',
     loadChildren: () => import('./ui-demos/alert-demo/alert-demo.module').then( m => m.AlertDemoPageModule)
   },
+  {
+    path: 'backbutton-demo',
+    loadChildren: () => import('./ui-demos/backbutton-demo/backbutton-demo.module').then( m => m.BackbuttonDemoPageModule)
+  },
+  {
+    path: 'card-demo',
+    loadChildren: () => import('./ui-demos/card-demo/card-demo.module').then( m => m.CardDemoPageModule)
+  },
+  {
+    path: 'list-demo',
+    loadChildren: () => import('./ui-demos/list-demo/list-demo.module').then( m => m.ListDemoPageModule)
+  },
+  {
+    path: 'grid-demo',
+    loadChildren: () => import('./ui-demos/grid-demo/grid-demo.module').then( m => m.GridDemoPageModule)
+  },
+  {
+    path: 'image-demo',
+    loadChildren: () => import('./ui-demos/image-demo/image-demo.module').then( m => m.ImageDemoPageModule)
+  },
+  {
+    path: 'form-demo',
+    loadChildren: () => import('./ui-demos/form-demo/form-demo.module').then( m => m.FormDemoPageModule)
+  },
+  {
+    path: 'searchbar-demo',
+    loadChildren: () => import('./ui-demos/searchbar-demo/searchbar-demo.module').then( m => m.SearchbarDemoPageModule)
+  },
+  {
+    path: 'select-demo',
+    loadChildren: () => import('./ui-demos/select-demo/select-demo.module').then( m => m.SelectDemoPageModule)
+  },
 ];
 
 @NgModule({

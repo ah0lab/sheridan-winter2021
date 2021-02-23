@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>form-demo</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form>
+    <ion-item>
+      <ion-label position="stacked">Student ID</ion-label>
+      <ion-input required type="text" [(ngModel)]="id" name="id"> </ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Name</ion-label>
+      <ion-input [(ngModel)]="stdName" name="first"></ion-input>
+    </ion-item>
+  </form>
+  <div>
+    <ion-button type="submit" class="ion-no-margin"
+      (click)="confirm()">
+      Create Student Record
+    </ion-button>
+  </div>
+</ion-content>

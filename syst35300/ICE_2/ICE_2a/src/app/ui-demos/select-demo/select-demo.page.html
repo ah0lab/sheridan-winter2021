@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>select-demo</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-label>Breakfast</ion-label>
+    <ion-select multiple ok-text="Confirm" cancel-text="Cancel"
+      (ionChange)="upDate($event)">
+      <ion-select-option *ngFor="let item of breakfast"
+        value="{{item.value}}">
+        {{item.desc}}
+      </ion-select-option>
+    </ion-select>
+  </ion-item>
+</ion-content>

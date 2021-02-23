@@ -12,10 +12,6 @@ const routes: Routes = [
     loadChildren: '../pages/page2/page2.module#Page2PageModule'
   },
   {
-    path: 'alertdemo',
-    loadChildren: '../ui-demos/alert-demo/alert-demo.module#Alert-DemoPageModule'
-  },
-  {
     path: '',
     component: HomePage
   }

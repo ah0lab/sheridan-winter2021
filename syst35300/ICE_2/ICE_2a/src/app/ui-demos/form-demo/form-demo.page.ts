@@ -2,23 +2,23 @@ import { Component, OnInit } from '@angular/core';
 import { AlertController } from '@ionic/angular';
 
 @Component({
-  selector: 'app-alert-demo',
-  templateUrl: './alert-demo.page.html',
-  styleUrls: ['./alert-demo.page.scss'],
+  selector: 'app-form-demo',
+  templateUrl: './form-demo.page.html',
+  styleUrls: ['./form-demo.page.scss'],
 })
-export class AlertDemoPage implements OnInit {
+export class FormDemoPage implements OnInit {
 
-  constructor(public ac: AlertController) { }
+  constructor(private ac: AlertController) { }
 
-  async alertAction() {
+  async confirm() {
     const alert = await this.ac.create({
-      header: '!Alert!',
+      header: 'New Student Account',
       subHeader: '',
-      message: 'This is an Alert Message',
+      message: 'Please confirm account creation.',
       buttons: [
         {
           text: 'Cancel',
-          handler: () => { console.log('Confirm cancel!'); }
+          handler: () => { console.log('Confirm Cancel!'); }
         },
         {
           text: 'OK',

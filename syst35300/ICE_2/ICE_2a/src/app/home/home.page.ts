@@ -22,55 +22,56 @@ export class HomePage {
         {
           text: 'Alerts', icon: 'alert-outline',
           handler: () => {
-            this.router.navigate(['alertdemo']);
+            this.router.navigate(['alert-demo']);
+            console.log('Navigate To Alert!');
           }
         },
         {
           text: 'Back Buttons', icon: 'arrow-back-circle-outline',
           handler: () => {
-            this.router.navigate(['backbuttondemo']);
+            this.router.navigate(['backbutton-demo']);
           }
         },
         {
           text: 'Cards', icon: 'copy-outline',
           handler: () => {
-            this.router.navigate(['carddemo']);
+            this.router.navigate(['card-demo']);
           },
         },
         {
           text: 'Lists', icon: 'list-outline',
           handler: () => {
-            this.router.navigate(['listdemo']);
+            this.router.navigate(['list-demo']);
           }
         },
         {
           text: 'Grid', icon: 'grid-outline',
           handler: () => {
-            this.router.navigate(['griddemo']);
+            this.router.navigate(['grid-demo']);
           }
         },
         {
           text: 'Image', icon: 'image-outline',
           handler: () => {
-            this.router.navigate(['imagedemo']);
+            this.router.navigate(['image-demo']);
           }
         },
         {
           text: 'Form/Input', icon: 'create-outline',
           handler: () => {
-            this.router.navigate(['formdemo']);
+            this.router.navigate(['form-demo']);
           }
         },
         {
           text: 'Searchbar', icon: 'search-circle-outline',
           handler: () => {
-            this.router.navigate(['searchbardemo']);
+            this.router.navigate(['searchbar-demo']);
           }
         },
         {
           text: 'Select', icon: 'checkmark-circle-outline',
           handler: () => {
-            this.router.navigate(['selectdemo']);
+            this.router.navigate(['select-demo']);
           }
         }
      ]
