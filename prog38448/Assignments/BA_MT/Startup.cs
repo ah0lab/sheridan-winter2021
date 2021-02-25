@@ -9,6 +9,9 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
+using Microsoft.EntityFrameworkCore;
+using BA_MT.Data;
+
 namespace BA_MT
 {
     public class Startup
@@ -23,12 +26,20 @@ namespace BA_MT
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            // Setup db connection
+            var connString = Configuration.GetConnectionString("DefaultConnection");
+            services.AddDbContext<SRMSContext>(opts => 
+                opts.UseSqlite(connString));
+            
             services.AddControllersWithViews();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, 
+            SRMSContext efContext)
         {
+            efContext.Database.EnsureCreated();
+            
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
