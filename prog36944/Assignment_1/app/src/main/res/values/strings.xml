@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">PizzaOrder</string>
+    <string name="app_name">Ben Ahola - PizzaOrder</string>
     <string name="appheading_labeltext">Pizza Order</string>
     <string name="deliveryswitch_labeltext">Delivery</string>
     <string name="sizespinner_labeltext">Pizza Size</string>

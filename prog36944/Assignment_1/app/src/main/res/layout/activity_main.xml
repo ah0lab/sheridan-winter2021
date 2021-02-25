@@ -17,7 +17,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" android:id="@+id/switch_delivery"
             app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/toppings" android:layout_marginTop="20dp"/>
+            app:layout_constraintTop_toBottomOf="@+id/toppings" android:layout_marginTop="12dp"
+    />
     <TextView
             android:text="@string/sizespinner_labeltext"
             android:layout_width="wrap_content"
@@ -57,29 +58,32 @@
             android:layout_height="wrap_content" android:id="@+id/app_heading"
             tools:text="Pizza Order" app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent"
-            android:layout_marginTop="84dp" app:layout_constraintHorizontal_bias="0.498" android:textSize="24sp"/>
+            android:layout_marginTop="60dp" app:layout_constraintHorizontal_bias="0.522" android:textSize="24sp"/>
     <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" app:srcCompat="@mipmap/pizza_fg" android:id="@+id/appIcon"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent" app:layout_constraintTop_toBottomOf="@+id/app_heading"
-            android:layout_marginTop="20dp" app:layout_constraintHorizontal_bias="0.498"/>
+            android:layout_marginTop="4dp" app:layout_constraintHorizontal_bias="0.521"/>
     <androidx.appcompat.widget.Toolbar
             android:layout_width="409dp"
             android:layout_height="wrap_content"
             android:background="#75BAB1"
             android:theme="?attr/actionBarTheme"
-            android:minHeight="?attr/actionBarSize" tools:layout_editor_absoluteX="1dp" android:id="@+id/toolbar"/>
+            android:minHeight="?attr/actionBarSize" android:id="@+id/toolbar"
+            app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
     <Button
             android:text="@string/orderbutton_text"
             android:layout_width="80dp"
-            android:layout_height="42dp" android:id="@+id/button_order" tools:layout_editor_absoluteY="0dp"
-            app:layout_constraintEnd_toEndOf="parent"/>
+            android:layout_height="42dp" android:id="@+id/button_order"
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintTop_toTopOf="parent"/>
     <TextView
             android:text="@string/orderTotal_labeltext"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" android:id="@+id/orderTotal" tools:layout_editor_absoluteY="10dp"
-            android:textSize="24sp" app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="16dp"/>
+            android:layout_height="wrap_content" android:id="@+id/orderTotal"
+            android:textSize="24sp" app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="16dp"
+            app:layout_constraintTop_toTopOf="parent" android:layout_marginTop="8dp"/>
     <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -88,13 +92,13 @@
             android:id="@+id/input_address"
             app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintTop_toBottomOf="@+id/label_address"
-            app:layout_constraintVertical_bias="0.273"/>
+            app:layout_constraintVertical_bias="0.045"/>
     <TextView
             android:text="@string/address_labeltext"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" android:id="@+id/label_address"
             app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/deliveryDetailsHeading" android:layout_marginTop="16dp"
+            app:layout_constraintTop_toBottomOf="@+id/deliveryDetailsHeading" android:layout_marginTop="20dp"
             app:layout_constraintHorizontal_bias="0.498"/>
     <TextView
             android:text="@string/deliverydetailsheading_labeltext"
@@ -102,7 +106,7 @@
             android:layout_height="wrap_content" android:id="@+id/deliveryDetailsHeading"
             app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/divider"
-            app:layout_constraintHorizontal_bias="0.501" android:layout_marginTop="16dp"/>
+            app:layout_constraintHorizontal_bias="0.498" android:layout_marginTop="4dp"/>
     <View
             android:id="@+id/divider"
             android:layout_width="409dp"
@@ -110,5 +114,5 @@
             android:background="?android:attr/listDivider"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent" app:layout_constraintTop_toBottomOf="@+id/switch_delivery"
-            android:layout_marginTop="24dp"/>
+            android:layout_marginTop="8dp"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

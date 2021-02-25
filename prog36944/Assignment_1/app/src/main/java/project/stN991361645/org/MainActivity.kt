@@ -10,13 +10,15 @@ import android.widget.Spinner
 import android.widget.TextView
 import android.widget.RadioGroup
 import android.widget.RadioButton
+import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
-        var subtotal = 0.00F
-        var thePizza = Pizza()
-        var deliveryEnabled = false
-        var deliveryWasToggled = false
+    var subtotal = 0.00F
+    var thePizza = Pizza()
+    var deliveryEnabled = false
+    var deliveryWasToggled = false
+    var lastChecked_rb = 0
 
     fun updateSubtotal()
     {
@@ -47,6 +49,8 @@ class MainActivity : AppCompatActivity() {
             android.R.layout.simple_spinner_item, pizzaSizeOptions)
         val sizeSpinner: Spinner = findViewById(R.id.sizeSpinner)
         sizeSpinner.adapter = arrayAdapter
+        // Default to Large Pizza
+        sizeSpinner.setSelection(2);
 
         sizeSpinner.onItemSelectedListener = object :
             AdapterView.OnItemSelectedListener {
@@ -76,6 +80,7 @@ class MainActivity : AppCompatActivity() {
                 "Vegetables"-> addPizzaTopping(Topping("Veg", ToppingType.VEG))
             }
 
+            lastChecked_rb = checkedId
             updateSubtotal()
         }}
 
@@ -84,6 +89,7 @@ class MainActivity : AppCompatActivity() {
         deliveryDetailsHeading.visibility = View.GONE
         label_address.visibility = View.GONE
         input_address.visibility = View.GONE
+        button_order.visibility = View.GONE
 
         // Setup Delivery toggle
         switch_delivery.setOnCheckedChangeListener { buttonView, isChecked -> run {
@@ -93,6 +99,7 @@ class MainActivity : AppCompatActivity() {
               deliveryDetailsHeading.visibility = View.VISIBLE
               label_address.visibility = View.VISIBLE
               input_address.visibility = View.VISIBLE
+              button_order.visibility = View.VISIBLE
 
               // Toggle delivery so we can charge them
               deliveryEnabled = true
@@ -102,9 +109,23 @@ class MainActivity : AppCompatActivity() {
               deliveryDetailsHeading.visibility = View.GONE
               label_address.visibility = View.GONE
               input_address.visibility = View.GONE
+              button_order.visibility = View.GONE
               deliveryEnabled = false
           }
         }}
+
+        button_order.setOnClickListener{
+            // Toast to confirm order
+            val toast = Toast.makeText(this, "Order Processed!", Toast.LENGTH_SHORT)
+
+            // Clear form fields
+            sizeSpinner.setSelection(2)
+            //toppings.clearCheck()
+            switch_delivery.toggle()
+            input_address.setText("")
+
+            toast.show()
+        }
 
     }
 
