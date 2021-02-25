@@ -21,10 +21,24 @@ class Pizza
     {
         this._toppings.add(topping)
     }
-    fun removeTopping(topping:Topping)
+
+    fun findTopping(toppingType:ToppingType): Topping
     {
-        this._toppings.remove(topping)
+        this._toppings.forEach {
+            if(it.getType() == toppingType)
+                return it
+        }
+        return Topping("NotFound", ToppingType.NA)
     }
+
+    fun removeTopping(toppingType:ToppingType)
+    {
+        val toppingToRemove: Topping = findTopping(toppingType)
+
+        if (toppingToRemove.getType() != ToppingType.NA)
+            this._toppings.remove(toppingToRemove)
+    }
+
 
     fun hasNoToppings(): Boolean
     {

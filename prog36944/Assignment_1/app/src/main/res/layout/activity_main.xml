@@ -11,63 +11,42 @@
             android:layout_height="33dp" android:id="@+id/sizeSpinner"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@+id/appIcon"
-            android:layout_marginTop="44dp"/>
-    <Switch
-            android:text="@string/deliveryswitch_labeltext"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" android:id="@+id/switch_delivery"
-            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/toppings" android:layout_marginTop="12dp"
-    />
-    <TextView
-            android:text="@string/sizespinner_labeltext"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" android:id="@+id/label_sizeSpinner"
-            app:layout_constraintTop_toBottomOf="@+id/appIcon"
-            app:layout_constraintBottom_toTopOf="@+id/sizeSpinner" app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintVertical_bias="0.642"/>
-    <TextView
-            android:text="@string/toppings_labeltext"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" android:id="@+id/label_toppings"
-            app:layout_constraintBottom_toTopOf="@+id/toppings"
-            app:layout_constraintTop_toBottomOf="@+id/sizeSpinner" app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintVertical_bias="0.458"/>
-    <RadioGroup
-            android:layout_width="137dp"
-            android:layout_height="92dp"
-            android:id="@+id/toppings" app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" app:layout_constraintHorizontal_bias="0.495"
-            app:layout_constraintTop_toBottomOf="@+id/sizeSpinner" android:layout_marginTop="44dp">
-        <RadioButton
-                android:text="Meat"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" android:id="@+id/topping_meat"/>
-        <RadioButton
-                android:text="Cheese"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" android:id="@+id/topping_cheese"/>
-        <RadioButton
-                android:text="@string/toppingsradio_veg_labeltext"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" android:id="@+id/topping_veg"/>
-    </RadioGroup>
+            android:layout_marginTop="36dp"/>
     <TextView
             android:text="@string/appheading_labeltext"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" android:id="@+id/app_heading"
             tools:text="Pizza Order" app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent"
-            android:layout_marginTop="60dp" app:layout_constraintHorizontal_bias="0.522" android:textSize="24sp"/>
+            android:layout_marginTop="52dp" app:layout_constraintHorizontal_bias="0.499" android:textSize="24sp"/>
+    <Switch
+            android:text="@string/deliveryswitch_labeltext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/switch_delivery"
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/checkbx_veg" android:layout_marginTop="12dp"/>
+    <TextView
+            android:text="@string/sizespinner_labeltext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/label_sizeSpinner"
+            app:layout_constraintTop_toBottomOf="@+id/appIcon"
+            app:layout_constraintBottom_toTopOf="@+id/sizeSpinner" app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintVertical_bias="0.36"/>
+    <TextView
+            android:text="@string/toppings_labeltext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/label_toppings"
+            app:layout_constraintTop_toBottomOf="@+id/sizeSpinner" app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" android:layout_marginTop="12dp"/>
     <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" app:srcCompat="@mipmap/pizza_fg" android:id="@+id/appIcon"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent" app:layout_constraintTop_toBottomOf="@+id/app_heading"
-            android:layout_marginTop="4dp" app:layout_constraintHorizontal_bias="0.521"/>
+            android:layout_marginTop="4dp" app:layout_constraintHorizontal_bias="0.518"/>
     <androidx.appcompat.widget.Toolbar
-            android:layout_width="409dp"
-            android:layout_height="wrap_content"
+            android:layout_width="736dp"
+            android:layout_height="48dp"
             android:background="#75BAB1"
             android:theme="?attr/actionBarTheme"
             android:minHeight="?attr/actionBarSize" android:id="@+id/toolbar"
@@ -115,4 +94,23 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent" app:layout_constraintTop_toBottomOf="@+id/switch_delivery"
             android:layout_marginTop="8dp"/>
+    <CheckBox
+            android:text="@string/toppingsradio_meat_labeltext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/checkbx_meat"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/label_toppings" android:layout_marginTop="12dp"
+            app:layout_constraintHorizontal_bias="0.498"/>
+    <CheckBox
+            android:text="@string/toppingsradio_veg_labeltext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/checkbx_veg"
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/checkbx_cheese"/>
+    <CheckBox
+            android:text="@string/toppingsradio_cheese_labeltext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/checkbx_cheese"
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/checkbx_meat"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

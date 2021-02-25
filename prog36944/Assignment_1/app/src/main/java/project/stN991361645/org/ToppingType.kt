@@ -4,5 +4,6 @@ enum class ToppingType
 {
     MEAT,
     CHEESE,
-    VEG
+    VEG,
+    NA
 }

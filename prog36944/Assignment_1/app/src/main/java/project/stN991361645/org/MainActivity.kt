@@ -27,17 +27,6 @@ class MainActivity : AppCompatActivity() {
         orderTotal.text = "Total: " + subtotal.toString()
     }
 
-    fun addPizzaTopping(topping:Topping)
-    {
-        // Radio buttons only allow for one topping at a time
-        if (!thePizza.hasNoToppings()) {
-            thePizza.removeTopping(
-                thePizza.getToppingAt(0))
-        }
-        thePizza.addTopping(topping)
-        updateSubtotal()
-    }
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -72,6 +61,41 @@ class MainActivity : AppCompatActivity() {
         }
 
         // Setup topping radio buttons
+        checkbx_cheese.setOnCheckedChangeListener { buttonView, isChecked -> run {
+            val selectedTopping = Topping("Cheese", ToppingType.CHEESE)
+
+            if (isChecked)
+                thePizza.addTopping(selectedTopping)
+            else
+                thePizza.removeTopping(ToppingType.CHEESE)
+
+            updateSubtotal()
+        }}
+
+        checkbx_meat.setOnCheckedChangeListener { buttonView, isChecked -> run {
+            val selectedTopping = Topping("Meat", ToppingType.MEAT)
+
+            if (isChecked)
+                thePizza.addTopping(selectedTopping)
+            else
+                thePizza.removeTopping(ToppingType.MEAT)
+
+            updateSubtotal()
+        }}
+
+        checkbx_veg.setOnCheckedChangeListener { buttonView, isChecked -> run {
+            val selectedTopping = Topping("Vegetables", ToppingType.VEG)
+
+            if (isChecked)
+                thePizza.addTopping(selectedTopping)
+            else
+                thePizza.removeTopping(ToppingType.VEG)
+
+            updateSubtotal()
+        }}
+
+
+        /*
         toppings.setOnCheckedChangeListener { group, checkedId -> run {
             val selectedRadio: RadioButton = findViewById(checkedId)
             when(selectedRadio.text) {
@@ -83,6 +107,7 @@ class MainActivity : AppCompatActivity() {
             lastChecked_rb = checkedId
             updateSubtotal()
         }}
+        */
 
         // Set initial delivery options view state
         divider.visibility = View.GONE
@@ -120,7 +145,12 @@ class MainActivity : AppCompatActivity() {
 
             // Clear form fields
             sizeSpinner.setSelection(2)
-            //toppings.clearCheck()
+            if (checkbx_veg.isChecked)
+                checkbx_veg.toggle()
+            if (checkbx_meat.isChecked)
+                checkbx_meat.toggle()
+            if (checkbx_cheese.isChecked)
+                checkbx_cheese.toggle()
             switch_delivery.toggle()
             input_address.setText("")
 
