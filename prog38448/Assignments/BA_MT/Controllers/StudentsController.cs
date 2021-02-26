@@ -1,8 +1,11 @@
 using System;
+using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
 using System.Linq;
 using BA_MT.Models;
 using BA_MT.Data;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace BA_MT.Controllers
 {
@@ -98,10 +101,59 @@ namespace BA_MT.Controllers
             if (id == null) return NotFound();
 
             var fetchedStudent = _dbContext.Students.FirstOrDefault(s => s.Id == id);
-
             if (fetchedStudent == null) return NotFound();
+            
+            var availableCourses = _dbContext.Courses.ToList();
 
-            return View(fetchedStudent);
+            var courseOptions = new List<SelectListItem>();
+
+            if (fetchedStudent.Courses != null && 
+                fetchedStudent.Courses.Any())
+            {
+                foreach (var course in availableCourses)
+                {
+                    if (!fetchedStudent.Courses.Contains(course))
+                        courseOptions.Add(new SelectListItem {
+                            Value = course.Code.ToString(),
+                            Text = course.Title
+                        });
+                }
+            }
+            else
+            {
+                foreach (var course in availableCourses)
+                {
+                    courseOptions.Add(new SelectListItem
+                    {
+                        Value = course.Code.ToString(),
+                        Text = course.Title
+                    });
+                }
+            }
+
+            ViewData["AvailableCourses"] = courseOptions;
+            return View(new EnrollmentViewModel(fetchedStudent, availableCourses[0]));
+        }
+
+        [HttpPost]
+        public IActionResult Enroll(int? id, int? code)
+        {
+            //if (id == null) return NotFound();
+
+            var fetchedStudent = _dbContext.Students.FirstOrDefault(s => s.Id == id);
+            var fetchedCourse = _dbContext.Courses.FirstOrDefault(c => c.Code == code);
+            
+            //if (fetchedStudent == null || 
+            //    fetchedCourse == null) return NotFound();
+
+            //fetchedStudent.Courses.Add(fetchedCourse);
+            fetchedCourse.Students.Add(fetchedStudent);
+
+            _dbContext.Update(fetchedCourse);
+            _dbContext.Update(fetchedStudent);
+            _dbContext.SaveChanges();
+            
+            return RedirectToAction("Enroll");
         }
 
     }

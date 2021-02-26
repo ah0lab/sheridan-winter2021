@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using Microsoft.EntityFrameworkCore.ChangeTracking;
 
 namespace BA_MT.Models
 {
@@ -15,6 +16,20 @@ namespace BA_MT.Models
         
         public virtual ICollection<Student> Students { get; set; }
 
+        public Course(int code, string title, int credits)
+        {
+            Code = code;
+            Title = title;
+            Credits = credits;
+        }
+
+        public Course()
+        {
+            Code = 0;
+            Title = "";
+            Credits = 0;
+        }
+        
         public IEnumerable<ValidationResult> Validate(ValidationContext context)
         {
             var validationResults = new List<ValidationResult>();

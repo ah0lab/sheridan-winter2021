@@ -1,4 +1,4 @@
-@model BA_MT.Models.Student
+@model BA_MT.Models.EnrollmentViewModel
 
 @{
     ViewData["Title"] = "Enroll Student";
@@ -6,7 +6,44 @@
 }
 
 <main>
+    <table>
+        <thead>
+        <th>Course Code</th>
+        <th>Course Title</th>
+        <th>Course Credits</th>
+        <th></th>
+        </thead>
+        <tbody>
+        <tr>
+            @if (Model.Student.Courses != null &&
+                 Model.Student.Courses.Any())
+            {
+                @foreach (var course in Model.Student.Courses)
+                {
+                    <td><p>@course.Code.ToString()</p></td>
+                    <td><p>@course.Title</p></td>
+                    <td><p>@course.Credits.ToString()</p></td>
+                    <a asp-action="Unenroll">Unenroll</a>
+                }
+            }
+            else
+            {
+                <td colspan="4"><h3>Not enrolled in any courses</h3></td>
+            }
+        </tr>
+        </tbody>
+    </table>
     <section>
-        <h3>Current Enrollment</h3>
+        <h3>Course Enrollment</h3>
+            <form asp-action="Enroll">
+                <label>Available Courses</label>
+                @Html.DropDownListFor(m => m.SelectedCourse.Code, 
+                    (IEnumerable<SelectListItem>)ViewData["AvailableCourses"]);
+                <input asp-for="Student.Id" hidden/>
+                <input type="submit" value="Add Course"/>
+            </form>
+    </section>
+    <section>
+        <a asp-action="Index">Back to student directory</a>
     </section>
 </main>
