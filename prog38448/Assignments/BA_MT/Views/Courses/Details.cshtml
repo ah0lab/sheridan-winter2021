@@ -1,0 +1,47 @@
+@model BA_MT.Models.Course
+
+@{
+    ViewData["Title"] = "Course Details";
+    Layout = "_Layout";
+}
+
+<main>
+    <section>
+        <table>
+            <tbody>
+            <tr>
+                <td>Course Code</td>
+                <td>@Html.DisplayFor(course => course.Code)</td>
+            </tr>
+            <tr>
+                <td>Course Title</td>
+                <td>@Html.DisplayFor(course => course.Title)</td>
+            </tr>
+            <tr>
+                <td>Course Credits</td>
+                <td>@Html.DisplayFor(course => course.Credits)</td>
+            </tr>
+            <tr>
+                <td>Enrolled Students</td> 
+                <td>
+                    @if (Model.Students != null && Model.Students.Any())
+                    {
+                        <ul>
+                        @foreach (var student in Model.Students)
+                        {
+                            <li>
+                                <p>@student.FirstName @student.LastName</p>
+                            </li>
+                        }
+                        </ul>
+                    }
+                    else
+                    {
+                        <p>No students currently enrolled</p>
+                    }
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </section>
+</main>

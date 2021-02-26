@@ -1,0 +1,26 @@
+@model BA_MT.Models.Course 
+
+@{
+    ViewData["Title"] = "Edit Course Info";
+    Layout = "_Layout";
+}
+
+<main>
+    <section>
+        @Html.ValidationSummary(false, "", new {@class="text-danger"})
+        <form asp-action="Edit">
+            <fieldset class="form-fields">
+                <legend>Course Information</legend>
+                <label asp-for="Code"> </label>
+                <input asp-for="Code" disabled />
+                <label asp-for="Title"> </label>
+                <input asp-for="Title" />
+                <label asp-for="Credits"> </label>
+                <input asp-for="Credits" />
+            </fieldset>
+            <input asp-for="Code" hidden />
+            <input type="submit" value="Update Course Info" />
+        </form>
+        <a asp-action="Index">Back to course directory</a>
+    </section>
+</main>

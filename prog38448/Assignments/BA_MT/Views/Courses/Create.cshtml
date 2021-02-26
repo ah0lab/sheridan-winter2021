@@ -1,4 +1,4 @@
-@model TModel
+@model BA_MT.Models.Course
 
 @{
     ViewData["Title"] = "Course Creation";
@@ -6,18 +6,19 @@
 }
 
 <main>
-    <section>
-        <h4>Courses</h4>
-        <table>
-            <thead>
-            </thead>
-            <tbody>
-            </tbody>
-        </table>
-    </section>
-    <section>
-        <form>
-            
+    <section class="student-create">
+        @Html.ValidationSummary(false, "", new {@class="text-danger"})
+        <form asp-action="Create">
+            <fieldset>
+                <legend>Course Info</legend>
+                <label asp-for="Code"></label>
+                <input asp-for="Code"/>
+                <label asp-for="Title"></label>
+                <input asp-for="Title"/>
+                <label asp-for="Credits"></label>
+                <input asp-for="Credits"/>
+            </fieldset>
+            <input type="submit" value="Add Course"/>
         </form>
     </section>
 </main>

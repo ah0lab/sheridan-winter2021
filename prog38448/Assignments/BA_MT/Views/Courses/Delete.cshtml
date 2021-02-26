@@ -1,0 +1,31 @@
+@model BA_MT.Models.Course
+
+@{
+    ViewData["Title"] = "Confirm Course Deletion";
+    Layout = "_Layout";
+}
+
+<main>
+    <section>
+        <table>
+            <tr>
+                <td>Course Code</td>
+                @Html.DisplayFor(course => course.Code)
+            </tr>
+            <tr>
+                <td>Course Title</td>
+                @Html.DisplayFor(course => course.Title)
+            </tr>
+            <tr>
+                <td>Course Credits</td>
+                @Html.DisplayFor(course => course.Credits)
+            </tr>
+        </table>
+    </section>
+    <section>
+        <form asp-action="Delete">
+            <input type="hidden" asp-for="Code" />
+            <input type="submit" value="Delete" />
+        </form>
+    </section>
+</main>

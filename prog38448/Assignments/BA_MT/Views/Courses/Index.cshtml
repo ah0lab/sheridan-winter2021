@@ -1,7 +1,55 @@
-@model TModel
+@model IEnumerable<BA_MT.Models.Course>
 
 @{
     ViewData["Title"] = "Courses";
     Layout = "_Layout";
 }
 <h3>Courses</h3>
+
+<main>
+    <section>
+        <a asp-action="Create" asp-controller="Courses">Create Course</a>
+    </section>
+    <section>
+        @if (Model != null && Model.Any())
+        {
+            <table>
+                <thead>
+                <tr>
+                    <th>Course Code</th>
+                    <th>Course Title</th>
+                    <th>Course Credits</th>
+                    <th></th>
+                </tr>
+                </thead>
+                <tbody>
+                @foreach (var course in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(model => course.Code)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => course.Title)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => course.Credits)
+                        </td>
+                        <td>
+                            <ul>
+                                <li><a asp-action="Details" asp-route-code="@course.Code.ToString()">Details</a></li>
+                                <li><a asp-action="Edit" asp-route-code="@course.Code.ToString()">Edit</a></li>
+                                <li><a asp-action="Delete" asp-route-code="@course.Code.ToString()">Delete</a></li>
+                            </ul>
+                        </td>
+                    </tr>
+                }
+                </tbody>
+            </table>
+        }
+        else
+        {
+            <h3>No Courses to display</h3>
+        }
+    </section>
+</main>
