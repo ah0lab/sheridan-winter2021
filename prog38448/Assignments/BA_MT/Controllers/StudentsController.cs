@@ -132,21 +132,24 @@ namespace BA_MT.Controllers
             }
 
             ViewData["AvailableCourses"] = courseOptions;
-            return View(new EnrollmentViewModel(fetchedStudent, availableCourses[0]));
+            return View(new EnrollmentViewModel(fetchedStudent.Id, availableCourses[0].Code));
         }
 
         [HttpPost]
-        public IActionResult Enroll(int? id, int? code)
+        public IActionResult Enroll([Bind("StudentId, SelectedCourseCode")]EnrollmentViewModel evm)
         {
-            //if (id == null) return NotFound();
-
-            var fetchedStudent = _dbContext.Students.FirstOrDefault(s => s.Id == id);
-            var fetchedCourse = _dbContext.Courses.FirstOrDefault(c => c.Code == code);
+            var fetchedStudent = _dbContext.Students.FirstOrDefault(s => s.Id == evm.StudentId);
+            var fetchedCourse = _dbContext.Courses.FirstOrDefault(c => c.Code == evm.SelectedCourseCode);
             
-            //if (fetchedStudent == null || 
-            //    fetchedCourse == null) return NotFound();
+            if (fetchedStudent == null || 
+                fetchedCourse == null) return NotFound();
 
-            //fetchedStudent.Courses.Add(fetchedCourse);
+            if (fetchedStudent.Courses == null)
+                fetchedStudent.Courses = new List<Course>();
+            if (fetchedCourse.Students == null)
+                fetchedCourse.Students = new List<Student>();
+            
+            fetchedStudent.Courses.Add(fetchedCourse);
             fetchedCourse.Students.Add(fetchedStudent);
 
             _dbContext.Update(fetchedCourse);

@@ -23,12 +23,7 @@ namespace BA_MT.Models
             Credits = credits;
         }
 
-        public Course()
-        {
-            Code = 0;
-            Title = "";
-            Credits = 0;
-        }
+        public Course() { }
         
         public IEnumerable<ValidationResult> Validate(ValidationContext context)
         {

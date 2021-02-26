@@ -8,13 +8,15 @@ namespace BA_MT.Models
 {
     public class EnrollmentViewModel
     {
-        public Student Student { get; set; }
-        public Course SelectedCourse { get; set; }
+        public int StudentId { get; set; } 
+        public int SelectedCourseCode { get; set; } 
 
-        public EnrollmentViewModel(Student student, Course course)
+        public EnrollmentViewModel(){ }
+        
+        public EnrollmentViewModel(int studentId, int courseCode )
         {
-            Student = student;
-            SelectedCourse = course;
+            StudentId = studentId;
+            SelectedCourseCode = courseCode;
         }
     }
 }
