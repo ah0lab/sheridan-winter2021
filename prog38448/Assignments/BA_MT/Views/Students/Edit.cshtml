@@ -1,16 +1,16 @@
 @model BA_MT.Models.Student
 
 @{
-    ViewData["Title"] = "Create Student";
+    ViewData["Title"] = "Edit Student";
     Layout = "_Layout";
 }
 
 <main>
     <section>
-        @Html.ValidationSummary(false, "", new {@class="text-danger"}) 
-        <form asp-action="Create">
-            <fieldset>
-                <legend>Student Info</legend>
+        @Html.ValidationSummary(false, "", new {@class="text-danger"})
+        <form asp-action="Edit">
+            <fieldset class="form-fields">
+                <legend>Student Information</legend>
                 <label asp-for="FirstName">First Name</label>
                 <input asp-for="FirstName"/>
                 <label asp-for="LastName">Last Name</label>
@@ -18,7 +18,9 @@
                 <label asp-for="Birthday">Birthday</label>
                 <input type="date" min="1981-01-01" max="2000-12-31" value="1990-12-25" asp-for="Birthday"/>
             </fieldset>
-            <input type="submit" value="Create Student" />
+            <input asp-for="Id" hidden />
+            <input type="submit" value="Update Student Info" />
         </form>
+        <a asp-action="Index">Back to student directory</a>
     </section>
 </main>

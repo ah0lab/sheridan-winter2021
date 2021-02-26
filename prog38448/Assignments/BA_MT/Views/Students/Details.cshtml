@@ -1,0 +1,58 @@
+@model BA_MT.Models.Student
+
+@{
+    ViewData["Title"] = "Student Details";
+    Layout = "_Layout";
+}
+
+<main>
+    <section>
+        <table>
+            <tbody>
+            <tr>
+                <td>Student ID</td>
+                <td>@Html.DisplayFor(s => s.Id)</td>
+            </tr>
+            <tr>
+                <td>First Name</td>
+                <td>@Html.DisplayFor(s => s.FirstName)</td>
+            </tr>
+            <tr>
+                <td>Last Name</td>
+                <td>@Html.DisplayFor(s => s.LastName)</td>
+            </tr>
+            <tr>
+                <td>Birthday</td>
+                <td>@Html.DisplayFor(s => s.Birthday.Date)</td>
+            </tr>
+            <tr>
+                <td>Course Enrollment</td>
+                <td>
+                    @if (Model.Courses != null && Model.Courses.Any())
+                    {
+                        <table>
+                            <tbody>
+                                @foreach (var course in Model.Courses)
+                                {
+                                    <tr>
+                                        <td><p>@course.Code.ToString()</p></td>
+                                        <td><p>@course.Title</p></td>
+                                        <td><p>@course.Credits.ToString()</p></td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    }
+                    else
+                    {
+                        <p><strong>Student is not enrolled in any courses</strong></p>
+                        <a asp-action="Enroll" asp-route-id="@Model.Id.ToString()">
+                            Enroll Student into some courses
+                        </a>
+                    }
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </section>
+</main>

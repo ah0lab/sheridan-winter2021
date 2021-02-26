@@ -33,9 +33,9 @@ namespace BA_MT.Models
                );
             }
             
-            if ( DateTime.Compare(Birthday, new (1981,1,1)) < 0
+            if ( DateTime.Compare(Birthday.Date, new (1981,1,1)) < 0
                  || 
-                 DateTime.Compare(Birthday, new (2000, 31, 12)) > 0 )
+                 DateTime.Compare(Birthday.Date, new (2000, 12, 31)) > 0 )
             {
                validationResults.Add(
                    new ValidationResult(

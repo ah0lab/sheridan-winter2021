@@ -1,3 +1,4 @@
+using System;
 using Microsoft.AspNetCore.Mvc;
 using System.Linq;
 using BA_MT.Models;
@@ -14,7 +15,7 @@ namespace BA_MT.Controllers
             _dbContext = dbContext;
         }
         
-        public IActionResult Index() => View();
+        public IActionResult Index() => View(_dbContext.Students.ToList());
 
         public IActionResult Create() => View();
 
@@ -23,9 +24,10 @@ namespace BA_MT.Controllers
             [Bind("Id, FirstName, LastName, Birthday")]
             Student student)
         {
+            System.Diagnostics.Debug.WriteLine(student.Birthday.ToString());
             if (!ModelState.IsValid) return View(student);
 
-            _dbContext.Add(course);
+            _dbContext.Add(student);
             _dbContext.SaveChanges();
             
             return RedirectToAction("Index");
@@ -53,6 +55,7 @@ namespace BA_MT.Controllers
             return View(fetchedStudent);
         }
         
+        [HttpPost]
         public IActionResult Edit(int? id,
             [Bind("Id, FirstName, LastName, Birthday")]Student student)
         {
@@ -82,12 +85,23 @@ namespace BA_MT.Controllers
         {
             var fetchedStudent = _dbContext.Students.FirstOrDefault(s => s.Id == id);
 
-            if (!ModelState.IsValid || fetchedCourse == null) return NotFound();
+            if (!ModelState.IsValid || fetchedStudent == null) return NotFound();
 
             _dbContext.Remove(fetchedStudent);
             _dbContext.SaveChanges();
 
             return RedirectToAction("Index");
+        }
+
+        public IActionResult Enroll(int? id)
+        {
+            if (id == null) return NotFound();
+
+            var fetchedStudent = _dbContext.Students.FirstOrDefault(s => s.Id == id);
+
+            if (fetchedStudent == null) return NotFound();
+
+            return View(fetchedStudent);
         }
 
     }

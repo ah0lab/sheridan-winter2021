@@ -1,0 +1,35 @@
+@model BA_MT.Models.Student 
+
+@{
+    ViewData["Title"] = "Student Deletion Confirmation";
+    Layout = "_Layout";
+}
+
+<main>
+    <section>
+        <table>
+            <tr>
+                <td>Student ID</td>
+                @Html.DisplayFor(s=>s.Id)
+            </tr>
+            <tr>
+                <td>First Name</td>
+                @Html.DisplayFor(s=>s.FirstName)
+            </tr>
+            <tr>
+                <td>Last Name</td>
+                @Html.DisplayFor(s=>s.LastName)
+            </tr>
+            <tr>
+                <td>Birthday</td>
+                @Html.DisplayFor(s=>s.Birthday)
+            </tr>
+        </table> 
+    </section>
+    <section>
+        <form asp-action="Delete">
+            <input type="hidden" asp-for="Id" />
+            <input type="submit" value="Delete" />
+        </form>
+    </section>
+</main>
