@@ -1,0 +1,146 @@
+[
+ {
+   "date": "2021-03-08",
+   "outbreak_group": "1 Congregate Care",
+   "outbreak_subgroup": "1 Long-Term Care Homes",
+   "number_ongoing_outbreaks": 79
+ },
+ {
+   "date": "2021-03-08",
+   "outbreak_group": "1 Congregate Care",
+   "outbreak_subgroup": "2 Hospitals",
+   "number_ongoing_outbreaks": 20
+ },
+ {
+   "date": "2021-03-08",
+   "outbreak_group": "1 Congregate Care",
+   "outbreak_subgroup": "3 Retirement Homes",
+   "number_ongoing_outbreaks": 59
+ },
+ {
+   "date": "2021-03-08",
+   "outbreak_group": "2 Congregate Living",
+   "outbreak_subgroup": "18 Short-term accommodations",
+   "number_ongoing_outbreaks": 2
+ },
+ {
+   "date": "2021-03-08",
+   "outbreak_group": "2 Congregate Living",
+   "outbreak_subgroup": "22 Congregate other",
+   "number_ongoing_outbreaks": 5
+ },
+ {
+   "date": "2021-03-08",
+   "outbreak_group": "2 Congregate Living",
+   "outbreak_subgroup": "4 Group Home/Supportive Housing",
+   "number_ongoing_outbreaks": 39
+ },
+ {
+   "date": "2021-03-08",
+   "outbreak_group": "2 Congregate Living",
+   "outbreak_subgroup": "5 Correctional Facility",
+   "number_ongoing_outbreaks": 11
+ },
+ {
+   "date": "2021-03-08",
+   "outbreak_group": "2 Congregate Living",
+   "outbreak_subgroup": "6 Shelter",
+   "number_ongoing_outbreaks": 32
+ },
+ {
+   "date": "2021-03-08",
+   "outbreak_group": "3 Education",
+   "outbreak_subgroup": "10 School - Post-Secondary",
+   "number_ongoing_outbreaks": 2
+ },
+ {
+   "date": "2021-03-08",
+   "outbreak_group": "3 Education",
+   "outbreak_subgroup": "11 Child care",
+   "number_ongoing_outbreaks": 27
+ },
+ {
+   "date": "2021-03-08",
+   "outbreak_group": "3 Education",
+   "outbreak_subgroup": "7 School - Elementary",
+   "number_ongoing_outbreaks": 62
+ },
+ {
+   "date": "2021-03-08",
+   "outbreak_group": "3 Education",
+   "outbreak_subgroup": "8 School - Secondary",
+   "number_ongoing_outbreaks": 10
+ },
+ {
+   "date": "2021-03-08",
+   "outbreak_group": "3 Education",
+   "outbreak_subgroup": "9 School - Elementary/Secondary",
+   "number_ongoing_outbreaks": 3
+ },
+ {
+   "date": "2021-03-08",
+   "outbreak_group": "4 Workplace",
+   "outbreak_subgroup": "12 Workplace - Farm",
+   "number_ongoing_outbreaks": 18
+ },
+ {
+   "date": "2021-03-08",
+   "outbreak_group": "4 Workplace",
+   "outbreak_subgroup": "13 Workplace - Food Processing",
+   "number_ongoing_outbreaks": 5
+ },
+ {
+   "date": "2021-03-08",
+   "outbreak_group": "4 Workplace",
+   "outbreak_subgroup": "14 Workplace - Other",
+   "number_ongoing_outbreaks": 96
+ },
+ {
+   "date": "2021-03-08",
+   "outbreak_group": "4 Workplace",
+   "outbreak_subgroup": "15 Retail",
+   "number_ongoing_outbreaks": 14
+ },
+ {
+   "date": "2021-03-08",
+   "outbreak_group": "4 Workplace",
+   "outbreak_subgroup": "16 Medical/Health Service",
+   "number_ongoing_outbreaks": 7
+ },
+ {
+   "date": "2021-03-08",
+   "outbreak_group": "5 Recreational",
+   "outbreak_subgroup": "17 Bar/restaurant/nightclub",
+   "number_ongoing_outbreaks": 15
+ },
+ {
+   "date": "2021-03-08",
+   "outbreak_group": "5 Recreational",
+   "outbreak_subgroup": "19 Recreational fitness",
+   "number_ongoing_outbreaks": 7
+ },
+ {
+   "date": "2021-03-08",
+   "outbreak_group": "5 Recreational",
+   "outbreak_subgroup": "20 Personal service settings",
+   "number_ongoing_outbreaks": 4
+ },
+ {
+   "date": "2021-03-08",
+   "outbreak_group": "5 Recreational",
+   "outbreak_subgroup": "21 Other recreation",
+   "number_ongoing_outbreaks": 16
+ },
+ {
+   "date": "2021-03-08",
+   "outbreak_group": "6 Other/Unknown",
+   "outbreak_subgroup": "23 Other",
+   "number_ongoing_outbreaks": 10
+ },
+ {
+   "date": "2021-03-08",
+   "outbreak_group": "6 Other/Unknown",
+   "outbreak_subgroup": "24 Unknown",
+   "number_ongoing_outbreaks": 11
+ }
+]

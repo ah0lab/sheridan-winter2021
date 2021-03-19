@@ -1,0 +1,52 @@
+[
+ {
+   "reported_date": "2021-03-02",
+   "current_schools_w_cases": 640,
+   "current_schools_closed": 23,
+   "current_total_number_schools": 4828,
+   "cumulative_school_related_cases": 8813,
+   "cumulative_school_related_student_cases": 6262,
+   "cumulative_school_related_staff_cases": 1417,
+   "cumulative_school_related_unspecified_cases": 1134
+ },
+ {
+   "reported_date": "2021-03-03",
+   "current_schools_w_cases": 672,
+   "current_schools_closed": 24,
+   "current_total_number_schools": 4828,
+   "cumulative_school_related_cases": 8952,
+   "cumulative_school_related_student_cases": 6379,
+   "cumulative_school_related_staff_cases": 1438,
+   "cumulative_school_related_unspecified_cases": 1135
+ },
+ {
+   "reported_date": "2021-03-04",
+   "current_schools_w_cases": 683,
+   "current_schools_closed": 26,
+   "current_total_number_schools": 4828,
+   "cumulative_school_related_cases": 9049,
+   "cumulative_school_related_student_cases": 6455,
+   "cumulative_school_related_staff_cases": 1456,
+   "cumulative_school_related_unspecified_cases": 1138
+ },
+ {
+   "reported_date": "2021-03-05",
+   "current_schools_w_cases": 703,
+   "current_schools_closed": 29,
+   "current_total_number_schools": 4828,
+   "cumulative_school_related_cases": 9143,
+   "cumulative_school_related_student_cases": 6539,
+   "cumulative_school_related_staff_cases": 1466,
+   "cumulative_school_related_unspecified_cases": 1138
+ },
+ {
+   "reported_date": "2021-03-08",
+   "current_schools_w_cases": 734,
+   "current_schools_closed": 30,
+   "current_total_number_schools": 4828,
+   "cumulative_school_related_cases": 9233,
+   "cumulative_school_related_student_cases": 6618,
+   "cumulative_school_related_staff_cases": 1477,
+   "cumulative_school_related_unspecified_cases": 1138
+ }
+]

@@ -1,0 +1,110 @@
+[
+ {
+   "reported_date": "2021-03-02",
+   "school_board": "Ottawa-Carleton District School Board",
+   "municipality": "Ottawa",
+   "confirmed_school_partner_cases": 1
+ },
+ {
+   "reported_date": "2021-03-02",
+   "school_board": "York Catholic District School Board / York Region District School Board",
+   "municipality": "Vaughan",
+   "confirmed_school_partner_cases": 1
+ },
+ {
+   "reported_date": "2021-03-02",
+   "school_board": "Dufferin-Peel Catholic District School Board",
+   "municipality": "Brampton",
+   "confirmed_school_partner_cases": 1
+ },
+ {
+   "reported_date": "2021-03-03",
+   "school_board": "Ottawa-Carleton District School Board",
+   "municipality": "Ottawa",
+   "confirmed_school_partner_cases": 1
+ },
+ {
+   "reported_date": "2021-03-03",
+   "school_board": "York Catholic District School Board / York Region District School Board",
+   "municipality": "Vaughan",
+   "confirmed_school_partner_cases": 1
+ },
+ {
+   "reported_date": "2021-03-03",
+   "school_board": "Dufferin-Peel Catholic District School Board",
+   "municipality": "Brampton",
+   "confirmed_school_partner_cases": 1
+ },
+ {
+   "reported_date": "2021-03-04",
+   "school_board": "Ottawa-Carleton District School Board",
+   "municipality": "Ottawa",
+   "confirmed_school_partner_cases": 1
+ },
+ {
+   "reported_date": "2021-03-04",
+   "school_board": "York Catholic District School Board / York Region District School Board",
+   "municipality": "Vaughan",
+   "confirmed_school_partner_cases": 1
+ },
+ {
+   "reported_date": "2021-03-04",
+   "school_board": "Dufferin-Peel Catholic District School Board",
+   "municipality": "Brampton",
+   "confirmed_school_partner_cases": 1
+ },
+ {
+   "reported_date": "2021-03-04",
+   "school_board": "Renfrew County Catholic District School Board",
+   "municipality": "Pembroke",
+   "confirmed_school_partner_cases": 1
+ },
+ {
+   "reported_date": "2021-03-05",
+   "school_board": "Ottawa-Carleton District School Board",
+   "municipality": "Ottawa",
+   "confirmed_school_partner_cases": 1
+ },
+ {
+   "reported_date": "2021-03-05",
+   "school_board": "York Catholic District School Board / York Region District School Board",
+   "municipality": "Vaughan",
+   "confirmed_school_partner_cases": 1
+ },
+ {
+   "reported_date": "2021-03-05",
+   "school_board": "Dufferin-Peel Catholic District School Board",
+   "municipality": "Brampton",
+   "confirmed_school_partner_cases": 1
+ },
+ {
+   "reported_date": "2021-03-05",
+   "school_board": "Renfrew County Catholic District School Board",
+   "municipality": "Pembroke",
+   "confirmed_school_partner_cases": 1
+ },
+ {
+   "reported_date": "2021-03-08",
+   "school_board": "Ottawa-Carleton District School Board",
+   "municipality": "Ottawa",
+   "confirmed_school_partner_cases": 1
+ },
+ {
+   "reported_date": "2021-03-08",
+   "school_board": "York Catholic District School Board / York Region District School Board",
+   "municipality": "Vaughan",
+   "confirmed_school_partner_cases": 1
+ },
+ {
+   "reported_date": "2021-03-08",
+   "school_board": "Dufferin-Peel Catholic District School Board",
+   "municipality": "Brampton",
+   "confirmed_school_partner_cases": 1
+ },
+ {
+   "reported_date": "2021-03-08",
+   "school_board": "Renfrew County Catholic District School Board",
+   "municipality": "Pembroke",
+   "confirmed_school_partner_cases": 1
+ }
+]

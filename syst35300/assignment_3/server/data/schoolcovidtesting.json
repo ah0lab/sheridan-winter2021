@@ -1,0 +1,182 @@
+[
+ {
+   "reported_date": "2021-02-26",
+   "school_board_name": "Hamilton-Wentworth Catholic District School Board",
+   "schools_invited_to_participate": 1,
+   "new_tests_conducted": 60,
+   "new_cases_identified": 0,
+   "cumulative_conducted_tests": 78,
+   "cumulative_cases_identified": 0
+ },
+ {
+   "reported_date": "2021-02-26",
+   "school_board_name": "Hamilton-Wentworth District School Board",
+   "schools_invited_to_participate": 0,
+   "new_tests_conducted": 0,
+   "new_cases_identified": 0,
+   "cumulative_conducted_tests": 68,
+   "cumulative_cases_identified": 0
+ },
+ {
+   "reported_date": "2021-02-26",
+   "school_board_name": "Ottawa Region",
+   "schools_invited_to_participate": 28,
+   "new_tests_conducted": 1004,
+   "new_cases_identified": 0,
+   "cumulative_conducted_tests": 3440,
+   "cumulative_cases_identified": 20
+ },
+ {
+   "reported_date": "2021-02-26",
+   "school_board_name": "Peel Region",
+   "schools_invited_to_participate": 56,
+   "new_tests_conducted": 331,
+   "new_cases_identified": 5,
+   "cumulative_conducted_tests": 424,
+   "cumulative_cases_identified": 6
+ },
+ {
+   "reported_date": "2021-02-26",
+   "school_board_name": "Sudbury Catholic District School Board",
+   "schools_invited_to_participate": 0,
+   "new_tests_conducted": 0,
+   "new_cases_identified": 0,
+   "cumulative_conducted_tests": 274,
+   "cumulative_cases_identified": 0
+ },
+ {
+   "reported_date": "2021-02-26",
+   "school_board_name": "Toronto Region",
+   "schools_invited_to_participate": 80,
+   "new_tests_conducted": 1427,
+   "new_cases_identified": 17,
+   "cumulative_conducted_tests": 2344,
+   "cumulative_cases_identified": 28
+ },
+ {
+   "reported_date": "2021-02-26",
+   "school_board_name": "York Region District School Board",
+   "schools_invited_to_participate": 5,
+   "new_tests_conducted": 31,
+   "new_cases_identified": 0,
+   "cumulative_conducted_tests": 31,
+   "cumulative_cases_identified": 0
+ },
+ {
+   "reported_date": "2021-03-05",
+   "school_board_name": "Dufferin-Peel Catholic District School Board",
+   "schools_invited_to_participate": 151,
+   "new_tests_conducted": 112,
+   "new_cases_identified": 0,
+   "cumulative_conducted_tests": 112,
+   "cumulative_cases_identified": 0
+ },
+ {
+   "reported_date": "2021-03-05",
+   "school_board_name": "Durham District School Board",
+   "schools_invited_to_participate": 32,
+   "new_tests_conducted": 157,
+   "new_cases_identified": 0,
+   "cumulative_conducted_tests": 157,
+   "cumulative_cases_identified": 0
+ },
+ {
+   "reported_date": "2021-03-05",
+   "school_board_name": "Halton District School Board",
+   "schools_invited_to_participate": 8,
+   "new_tests_conducted": 151,
+   "new_cases_identified": 2,
+   "cumulative_conducted_tests": 151,
+   "cumulative_cases_identified": 2
+ },
+ {
+   "reported_date": "2021-03-05",
+   "school_board_name": "Hamilton-Wentworth Catholic District School Board",
+   "schools_invited_to_participate": 3,
+   "new_tests_conducted": 114,
+   "new_cases_identified": 0,
+   "cumulative_conducted_tests": 192,
+   "cumulative_cases_identified": 0
+ },
+ {
+   "reported_date": "2021-03-05",
+   "school_board_name": "Hamilton-Wentworth District School Board",
+   "schools_invited_to_participate": 2,
+   "new_tests_conducted": 300,
+   "new_cases_identified": 0,
+   "cumulative_conducted_tests": 368,
+   "cumulative_cases_identified": 0
+ },
+ {
+   "reported_date": "2021-03-05",
+   "school_board_name": "Ottawa Region",
+   "schools_invited_to_participate": 25,
+   "new_tests_conducted": 1211,
+   "new_cases_identified": 1,
+   "cumulative_conducted_tests": 4651,
+   "cumulative_cases_identified": 21
+ },
+ {
+   "reported_date": "2021-03-05",
+   "school_board_name": "Peel District School Board",
+   "schools_invited_to_participate": 246,
+   "new_tests_conducted": 459,
+   "new_cases_identified": 0,
+   "cumulative_conducted_tests": 459,
+   "cumulative_cases_identified": 0
+ },
+ {
+   "reported_date": "2021-03-05",
+   "school_board_name": "Peel Region",
+   "schools_invited_to_participate": 0,
+   "new_tests_conducted": 0,
+   "new_cases_identified": 0,
+   "cumulative_conducted_tests": 424,
+   "cumulative_cases_identified": 6
+ },
+ {
+   "reported_date": "2021-03-05",
+   "school_board_name": "Rainbow District School Board",
+   "schools_invited_to_participate": 5,
+   "new_tests_conducted": 157,
+   "new_cases_identified": 0,
+   "cumulative_conducted_tests": 157,
+   "cumulative_cases_identified": 0
+ },
+ {
+   "reported_date": "2021-03-05",
+   "school_board_name": "Sudbury Catholic District School Board",
+   "schools_invited_to_participate": 4,
+   "new_tests_conducted": 136,
+   "new_cases_identified": 0,
+   "cumulative_conducted_tests": 410,
+   "cumulative_cases_identified": 0
+ },
+ {
+   "reported_date": "2021-03-05",
+   "school_board_name": "Toronto Region",
+   "schools_invited_to_participate": 84,
+   "new_tests_conducted": 416,
+   "new_cases_identified": 9,
+   "cumulative_conducted_tests": 2760,
+   "cumulative_cases_identified": 37
+ },
+ {
+   "reported_date": "2021-03-05",
+   "school_board_name": "York Catholic District School Board",
+   "schools_invited_to_participate": 1,
+   "new_tests_conducted": 11,
+   "new_cases_identified": 0,
+   "cumulative_conducted_tests": 11,
+   "cumulative_cases_identified": 0
+ },
+ {
+   "reported_date": "2021-03-05",
+   "school_board_name": "York Region District School Board",
+   "schools_invited_to_participate": 2,
+   "new_tests_conducted": 70,
+   "new_cases_identified": 0,
+   "cumulative_conducted_tests": 101,
+   "cumulative_cases_identified": 0
+ }
+]
