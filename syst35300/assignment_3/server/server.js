@@ -6,15 +6,6 @@ const bodyParser = require('body-parser');
 const app = express();
 const port = 8887;
 
-var jsonData = {
-    ongoing_outbreaks: '',
-    cases_by_status: '',
-    school_summary: '',
-    school_testing: '',
-    active_partners: ''
-}
-
-
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
