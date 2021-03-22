@@ -1,3 +1,12 @@
-<p>
-  case-status works!
-</p>
+<ion-list>
+  <ion-item *ngFor="let stat of cases">
+    <ion-label>
+      <h3>{{stat.phuName}}</h3>
+      <p><strong>Phu. Number</strong>:{{stat.phuNumber}}</p>
+      <p><strong>Date</strong>:{{stat.date}}<p>
+      <p><strong>Active Cases</strong>:{{stat.activeCases}}</p>
+      <p><strong>Resolve Cases</strong>:{{stat.resolvedCases}}</p>
+      <p><strong>Deaths</strong>:{{stat.deaths}}</p>
+    </ion-label>
+  </ion-item>
+</ion-list>

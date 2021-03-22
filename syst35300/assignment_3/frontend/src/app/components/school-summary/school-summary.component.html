@@ -1,0 +1,14 @@
+<ion-list>
+  <ion-item *ngFor="let stat of summaryStats">
+    <ion-label>
+      <p><strong>Date</strong>: {{stat.date}}</p>
+      <p><strong>Effected Schools</strong>: {{stat.effectedSchools}}</p>
+      <p><strong>Schools Closed</strong>: {{stat.schoolsClosed}}</p>
+      <p><strong>Total Schools</strong>: {{stat.totalSchools}}</p>
+      <p><strong>Total School Cases</strong>: {{stat.totalSchoolCases}}</p>
+      <p><strong>Total Student Cases</strong>: {{stat.totalSchoolCasesStudents}}</p>
+      <p><strong>Total Staff Cases</strong>: {{stat.totalSchoolCasesStaff}}</p>
+      <p><strong>Total Unspecified Cases</strong>: {{stat.totalSchoolCasesUnspecified}}</p>
+    </ion-label>
+  </ion-item>
+</ion-list>

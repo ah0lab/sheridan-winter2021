@@ -1,0 +1,10 @@
+<ion-list>
+  <ion-item *ngFor="let stat of activePartners">
+    <ion-label>
+      <h3>{{stat.schoolBoard}}</h3>
+      <p><strong>Date</strong>:{{stat.date}}</p>
+      <p><strong>Municipality</strong>:{{stat.municipality}}</p>
+      <p><strong>Confirmed Partner Cases</strong>:{{stat.confirmedPartnerCases}}</p>
+    </ion-label>
+  </ion-item>
+</ion-list>

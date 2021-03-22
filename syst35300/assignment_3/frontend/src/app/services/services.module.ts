@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { StatFetcherService } from "./stat-fetcher.service";
+import {HttpClient, HttpClientModule} from "@angular/common/http";
 
 
 @NgModule({
@@ -9,7 +10,7 @@ import { StatFetcherService } from "./stat-fetcher.service";
     CommonModule
   ],
   providers: [
-    StatFetcherService
+    HttpClient
   ]
 })
 export class ServicesModule { }

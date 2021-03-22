@@ -1,0 +1,10 @@
+<ion-list>
+  <ion-item *ngFor="let outbreak of outbreaks">
+    <ion-label>
+      <h3>{{outbreak.date}}</h3>
+      <p>{{outbreak.group}}</p>
+      <p>{{outbreak.subgroup}}</p>
+      <p>{{outbreak.outbreakCount}}</p>
+    </ion-label>
+  </ion-item>
+</ion-list>

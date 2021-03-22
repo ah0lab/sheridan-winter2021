@@ -8,13 +8,18 @@ import { FolderPageRoutingModule } from './folder-routing.module';
 
 import { FolderPage } from './folder.page';
 
+import {ComponentsModule} from "../components/components.module";
+import {StatFetcherService} from "../services/stat-fetcher.service";
+
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    FolderPageRoutingModule
+    FolderPageRoutingModule,
+    ComponentsModule
   ],
-  declarations: [FolderPage]
+  declarations: [FolderPage],
+  providers: [StatFetcherService]
 })
 export class FolderPageModule {}
