@@ -3,7 +3,9 @@
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title>{{ folder }}</ion-title>
+    <ion-title *ngIf="folder === 'SchoolSummary'">Summary of Cases in Schools</ion-title>
+    <ion-title *ngIf="folder === 'CaseStatus'">Status of COVID-19 cases in Ontario by Public Health Unit</ion-title>
+    <ion-title *ngIf="folder === 'Outbreaks'">Ongoing Outbreaks</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -15,8 +17,31 @@
   </ion-header>
 
   <div id="container">
-    <strong class="capitalize">{{ folder }}</strong>
-    <p>Explore <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-    <app-school-summary></app-school-summary>
+    <section *ngIf="folder === 'SchoolSummary'">
+      <ion-item-group>
+        <app-school-summary *ngIf="displayingSchoolSummary"></app-school-summary>
+        <app-school-testing *ngIf="displayingSchoolTesting"></app-school-testing>
+        <app-school-active-partners *ngIf="displayingSchoolPartners"></app-school-active-partners>
+      </ion-item-group>
+      <ion-item-group>
+        <ion-item>
+          <ion-button (click)="toggleSchoolInfo('summary')">Case Summary</ion-button>
+        </ion-item>
+        <ion-item>
+          <ion-button (click)="toggleSchoolInfo('testing')">Targeted Testing Summary</ion-button>
+        </ion-item>
+        <ion-item>
+          <ion-button (click)="toggleSchoolInfo('partners')">School Board Partners</ion-button>
+        </ion-item>
+      </ion-item-group>
+    </section>
+
+    <section *ngIf="folder === 'CaseStatus'">
+      <app-case-status></app-case-status>
+    </section>
+
+    <section *ngIf="folder === 'Outbreaks'">
+      <app-ongoing-outbreaks></app-ongoing-outbreaks>
+    </section>
   </div>
 </ion-content>

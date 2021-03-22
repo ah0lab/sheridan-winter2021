@@ -1,3 +1,13 @@
-<p>
-  school-testing works!
-</p>
+<ion-list>
+  <ion-item *ngFor="let stat of testingStats">
+    <ion-label>
+      <p><strong>Date</strong>:{{stat.date}}</p>
+      <p><strong>School Board</strong>:{{stat.schoolBoard}}</p>
+      <p><strong>Invited Schools</strong>:{{stat.invitedSchools}}</p>
+      <p><strong>New Tests Conducted</strong>:{{stat.newTestsConducted}}</p>
+      <p><strong>New Cases Identified</strong>:{{stat.newCasesIdentified}}</p>
+      <p><strong>Cases Resolved</strong>:{{stat.totalCasesIdentified}}</p>
+      <p><strong>Total Tests Conducted</strong>:{{stat.totalTestsConducted}}</p>
+    </ion-label>
+  </ion-item>
+</ion-list>

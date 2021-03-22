@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { SchoolTestingStat } from "../../model/school-testing-stat";
+import { StatFetcherService } from "../../services/stat-fetcher.service";
 
 @Component({
   selector: 'app-school-testing',
@@ -6,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./school-testing.component.scss'],
 })
 export class SchoolTestingComponent implements OnInit {
+  public testingStats: SchoolTestingStat[] = [];
 
-  constructor() { }
+  constructor(private stats: StatFetcherService) { }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.stats.loadSchoolTestingData().subscribe(data => this.testingStats.push(data));
+  }
 
 }
