@@ -1,0 +1,49 @@
+@model IEnumerable<Members.Data.Member>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "_Layout";
+}
+<h2>Index</h2>
+
+<p>
+    <a asp-action="">Create New</a>
+</p>
+<table class="table">
+    <thead>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LastName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MembershipNumber)
+        </th>
+    </tr>
+        @foreach (var member in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(m => member.Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(m => member.FirstName)
+                </td>
+                <td>
+                    @Html.DisplayFor(m => member.LastName)
+                </td>
+                <td>
+                    @Html.DisplayFor(m => member.MembershipNumber)
+                </td>
+                <td>
+                    @Html.ActionLink("Details", "Details", new {id = member.Id})
+                </td>
+            </tr>
+        }
+    </thead>
+</table>
