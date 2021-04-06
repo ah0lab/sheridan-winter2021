@@ -1,0 +1,315 @@
+[
+  {
+    "_id": {"$oid": "6069de32ccf2b7954498f3a5"},
+    "address": {
+      "building": "8707",
+      "coord": [-73.8789718, 40.7483467],
+      "street": "Roosevelt Avenue",
+      "zipcode": "11372"
+    },
+    "borough": "Queens",
+    "cuisine": "Chicken",
+    "grades": [
+      {
+        "date": {"$date": "2014-12-11T00:00:00.000Z"},
+        "grade": "A",
+        "score": 12
+      },
+      {
+        "date": {"$date": "2013-12-04T00:00:00.000Z"},
+        "grade": "A",
+        "score": 2
+      },
+      {
+        "date": {"$date": "2013-06-15T00:00:00.000Z"},
+        "grade": "A",
+        "score": 13
+      },
+      {
+        "date": {"$date": "2012-05-21T00:00:00.000Z"},
+        "grade": "A",
+        "score": 7
+      }
+    ],
+    "name": "La Casa Del Pollo Restaurant",
+    "owner": "Ben Ahola",
+    "restaurant_id": "40387027"
+  },
+  {
+    "_id": {"$oid": "6069de32ccf2b7954498f526"},
+    "address": {
+      "building": "21820",
+      "coord": [-73.7365469, 40.7177808],
+      "street": "Jamaica Avenue",
+      "zipcode": "11428"
+    },
+    "borough": "Queens",
+    "cuisine": "Chicken",
+    "grades": [
+      {
+        "date": {"$date": "2015-01-16T00:00:00.000Z"},
+        "grade": "Z",
+        "score": 15
+      },
+      {
+        "date": {"$date": "2014-09-29T00:00:00.000Z"},
+        "grade": "B",
+        "score": 20
+      },
+      {
+        "date": {"$date": "2013-09-19T00:00:00.000Z"},
+        "grade": "A",
+        "score": 12
+      },
+      {
+        "date": {"$date": "2012-09-13T00:00:00.000Z"},
+        "grade": "A",
+        "score": 11
+      }
+    ],
+    "name": "Popeyes Chicken & Biscuits",
+    "owner": "Ben Ahola",
+    "restaurant_id": "40396769"
+  },
+  {
+    "_id": {"$oid": "6069de32ccf2b7954498f6e9"},
+    "address": {
+      "building": "715",
+      "coord": [-80.3876219, 27.637687],
+      "street": "Beach   20 Street",
+      "zipcode": "11691"
+    },
+    "borough": "Queens",
+    "cuisine": "Chicken",
+    "grades": [
+      {
+        "date": {"$date": "2014-12-29T00:00:00.000Z"},
+        "grade": "A",
+        "score": 9
+      },
+      {
+        "date": {"$date": "2013-12-30T00:00:00.000Z"},
+        "grade": "A",
+        "score": 13
+      },
+      {
+        "date": {"$date": "2013-08-14T00:00:00.000Z"},
+        "grade": "B",
+        "score": 22
+      },
+      {
+        "date": {"$date": "2013-02-22T00:00:00.000Z"},
+        "grade": "A",
+        "score": 13
+      },
+      {
+        "date": {"$date": "2012-01-12T00:00:00.000Z"},
+        "grade": "A",
+        "score": 6
+      }
+    ],
+    "name": "Big New York Fried Chicken",
+    "owner": "Ben Ahola",
+    "restaurant_id": "40512087"
+  },
+  {
+    "_id": {"$oid": "6069de32ccf2b7954498f862"},
+    "address": {
+      "building": "3501",
+      "coord": [-73.921888, 40.76061199999999],
+      "street": "Broadway",
+      "zipcode": "11106"
+    },
+    "borough": "Queens",
+    "cuisine": "Chicken",
+    "grades": [
+      {
+        "date": {"$date": "2014-05-29T00:00:00.000Z"},
+        "grade": "A",
+        "score": 9
+      },
+      {
+        "date": {"$date": "2013-05-08T00:00:00.000Z"},
+        "grade": "A",
+        "score": 7
+      },
+      {
+        "date": {"$date": "2012-03-20T00:00:00.000Z"},
+        "grade": "A",
+        "score": 5
+      },
+      {
+        "date": {"$date": "2012-01-09T00:00:00.000Z"},
+        "grade": "P",
+        "score": 4
+      }
+    ],
+    "name": "Caravan Chicken",
+    "owner": "Ben Ahola",
+    "restaurant_id": "40565141"
+  },
+  {
+    "_id": {"$oid": "6069de32ccf2b7954498fb93"},
+    "address": {
+      "building": "2919",
+      "coord": [-73.9109154, 40.7766011],
+      "street": "Ditmars Boulevard",
+      "zipcode": "11105"
+    },
+    "borough": "Queens",
+    "cuisine": "Chicken",
+    "grades": [
+      {
+        "date": {"$date": "2014-10-23T00:00:00.000Z"},
+        "grade": "A",
+        "score": 10
+      },
+      {
+        "date": {"$date": "2014-04-26T00:00:00.000Z"},
+        "grade": "A",
+        "score": 13
+      },
+      {
+        "date": {"$date": "2013-07-23T00:00:00.000Z"},
+        "grade": "A",
+        "score": 12
+      },
+      {
+        "date": {"$date": "2012-11-13T00:00:00.000Z"},
+        "grade": "B",
+        "score": 16
+      },
+      {
+        "date": {"$date": "2012-06-14T00:00:00.000Z"},
+        "grade": "A",
+        "score": 10
+      }
+    ],
+    "name": "Chicken Festival",
+    "owner": "Ben Ahola",
+    "restaurant_id": "40711301"
+  },
+  {
+    "_id": {"$oid": "6069de32ccf2b7954498fbbe"},
+    "address": {
+      "building": "6202",
+      "coord": [-73.9015462, 40.7136773],
+      "street": "Fresh Pond Road",
+      "zipcode": "11379"
+    },
+    "borough": "Queens",
+    "cuisine": "Chicken",
+    "grades": [
+      {
+        "date": {"$date": "2014-05-23T00:00:00.000Z"},
+        "grade": "A",
+        "score": 7
+      },
+      {
+        "date": {"$date": "2013-12-09T00:00:00.000Z"},
+        "grade": "A",
+        "score": 5
+      },
+      {
+        "date": {"$date": "2013-05-09T00:00:00.000Z"},
+        "grade": "A",
+        "score": 12
+      },
+      {
+        "date": {"$date": "2012-04-02T00:00:00.000Z"},
+        "grade": "A",
+        "score": 13
+      }
+    ],
+    "name": "Pizza Hut, Kentucky Fried Chicken",
+    "owner": "Ben Ahola",
+    "restaurant_id": "40715808"
+  },
+  {
+    "_id": {"$oid": "6069de32ccf2b7954498fd48"},
+    "address": {
+      "building": "17150",
+      "coord": [-73.79424929999999, 40.7574391],
+      "street": "Northern Boulevard",
+      "zipcode": "11358"
+    },
+    "borough": "Queens",
+    "cuisine": "Chicken",
+    "grades": [
+      {
+        "date": {"$date": "2014-10-30T00:00:00.000Z"},
+        "grade": "A",
+        "score": 12
+      },
+      {
+        "date": {"$date": "2013-10-16T00:00:00.000Z"},
+        "grade": "A",
+        "score": 4
+      },
+      {
+        "date": {"$date": "2013-05-07T00:00:00.000Z"},
+        "grade": "A",
+        "score": 11
+      },
+      {
+        "date": {"$date": "2012-10-18T00:00:00.000Z"},
+        "grade": "A",
+        "score": 13
+      },
+      {
+        "date": {"$date": "2012-05-24T00:00:00.000Z"},
+        "grade": "A",
+        "score": 9
+      },
+      {
+        "date": {"$date": "2012-01-06T00:00:00.000Z"},
+        "grade": "A",
+        "score": 12
+      }
+    ],
+    "name": "Boston Market",
+    "owner": "Ben Ahola",
+    "restaurant_id": "40786910"
+  },
+  {
+    "_id": {"$oid": "6069de32ccf2b7954498fd68"},
+    "address": {
+      "building": "8760",
+      "coord": [-73.80977560000001, 40.7054733],
+      "street": "Sutphin Boulevard",
+      "zipcode": "11435"
+    },
+    "borough": "Queens",
+    "cuisine": "Chicken",
+    "grades": [
+      {
+        "date": {"$date": "2014-10-16T00:00:00.000Z"},
+        "grade": "A",
+        "score": 13
+      },
+      {
+        "date": {"$date": "2013-10-17T00:00:00.000Z"},
+        "grade": "A",
+        "score": 7
+      },
+      {
+        "date": {"$date": "2013-05-03T00:00:00.000Z"},
+        "grade": "A",
+        "score": 7
+      },
+      {
+        "date": {"$date": "2012-03-08T00:00:00.000Z"},
+        "grade": "A",
+        "score": 13
+      },
+      {
+        "date": {"$date": "2011-11-02T00:00:00.000Z"},
+        "grade": "A",
+        "score": 12
+      }
+    ],
+    "name": "Popeyes Chicken & Biscuits",
+    "owner": "Ben Ahola",
+    "restaurant_id": "40791096"
+  }
+]
