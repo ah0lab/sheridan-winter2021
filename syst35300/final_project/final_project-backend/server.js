@@ -15,10 +15,12 @@ const schema = new mongoose.Schema({
     address: String,
     postal_code: String,
     province: String,
-    phone: String
+    phone: String,
+    appointments: []
 });
+//schema.index({"appointments.id": 1}, {unique: true});
 const collectionName = 'vaccine';
-const assCentre = mongoose.model('assessment_centre', schema, 'vaccine');
+const vaccine = mongoose.model('assessment_centre', schema, 'vaccine');
 
 const dbName = 'covid19';
 const dbPath = path.resolve(__dirname, 'db');
@@ -32,6 +34,9 @@ app.use((req, res, next) => {
     res.header("Access-Control-Allow-Headers", "Origin, x-Requested-With, Content-Type, Accept");
     next();
 });
+
+mongoose.connect(dbConnString, {useNewUrlParser: true, useUnifiedTopology: true});
+
 app.listen(port, () => console.log(`Server running at localhost:${port}!`));
 
 app.get('/dbImport', (req, res) => {
@@ -54,7 +59,9 @@ app.get('/dbImport', (req, res) => {
 
 app.get('/dbExport', (req, res) => {
     const exec = require('child_process').exec;
-    const command = `mongoexport -d ${dbName} -c ${collectionName} -o ${path.resolve(__dirname, 'data', 'export', 'output.json')}`
+    // TODO export with date time?
+    const filename = `${Date.now()}-output.json`
+    const command = `mongoexport -d ${dbName} -c ${collectionName} -o ${path.resolve(__dirname, 'data', 'export', filename)}`
 
     exec(command, (error, stdout, stderr) => {
         if(error) {
@@ -69,3 +76,138 @@ app.get('/dbExport', (req, res) => {
         } else { res.send('Error'); }
     });
 });
+
+app.get('/assessment_centres', (req, res) => {
+    vaccine.find({},{location_id:1, location_name:1})
+        .then(result => {
+            res.send(result);
+        }, err => {res.send(err.message);})
+        .catch(err => {console.log(err);
+    });
+});
+
+app.get('/assessment_centres/centre', (req, res) => {
+    console.log(req.query);
+    vaccine.find({location_id:req.get('location_id')}, {appointments:1})
+        .then(
+            result => {
+                res.send(result);
+            },
+            err => {res.send(err.message);}
+        ).catch(err => {console.log(err);});
+});
+
+// Retrieve all appointments for a selected centre
+app.get('/assessment_centres/centre/appointments', (req, res) => {
+    // TODO: Retrieve all appointments for a specific centre
+    console.log(req.query.location_id)
+    vaccine.find({'location_id': req.query.location_id}, {appointments:1})
+        .then(
+            result => {
+                res.send(result);
+            },
+            err => {res.send(err.message);}
+        ).catch(err => { console.log(err); });
+});
+
+// Get information on a single appointment
+app.get('/assessment_centres/centre/appointments/appointment', (req, res) => {
+    vaccine.find({
+        location_id: req.query.location_id,
+        appointments: {
+            $elemMatch: { time: req.query.time, date: req.query.date }
+        },
+    }, { _id:0, 'appointments.$': 1}
+    ).then(
+        result => {
+            res.send(result);
+        },
+        err => {res.send(err.message);}
+        ).catch(err => { console.log(err); }
+    );
+});
+
+// Create a single appointment
+app.post('/assessment_centres/centre/appointments/appointment', (req, res) => {
+    // TODO: Add Vaccination appointment under selected center to database
+    vaccine.findOneAndUpdate({
+        location_id: req.query.location_id
+    },
+    {
+        $addToSet: { appointments: {
+            date: req.query.date,
+            time: req.query.time,
+            ohip_number: req.query.ohip_number,
+            email: req.query.email
+        }}
+    }).then(
+        result => {
+            res.send(res.ok);
+        },
+        err => { res.send(err.message); }
+        ).catch( err => { console.log(err);}
+    );
+});
+
+// Function to export one or all appointments from the database.
+//  Filename includes date and time when filename was generated
+app.get('/assessment_centres/centre/appointments/export', (req, res) => {
+    res.send(res.ok);
+});
+
+// Function to delete all appointments
+app.post('/assessment_centres/centre/appointments/delete', (req, res) => {
+    vaccine.findOneAndUpdate({
+        location_id: req.query.location_id
+    },{
+        $set: {appointments: []}
+    }).then(
+        result => {
+            res.send(res.ok);
+        },
+        err => { res.send(err.message); }
+        ).catch( err => {console.log(err);}
+    );
+});
+
+// Function to delete one appointment
+app.post('/assessment_centres/centre/appointments/appointment/delete', (req,res) =>{
+    vaccine.findOneAndUpdate({
+        location_id: req.query.location_id,
+        //appointments: { $elemMatch: {date: req.query.date, time: req.query.time} }
+    }, {
+        $pull: { appointments: {
+            date: req.query.date,
+            time: req.query.time
+        }}
+    }).then(
+        result => {
+            console.log(result)
+            res.send(res.ok)
+        },
+        err => { res.send(err.message); }
+    ).catch(err => { console.log(err); }
+    );
+});
+
+// Function to update information of an appointment selected from the list
+/*
+app.post('/assessment_centres/centre/appointments/appointment/update', (req,res) => {
+    vaccine.findOneAndUpdate({
+        location_id: req.query.location_id,
+        appointments: {$elemMatch: {time: req.query.time, date: req.query.date}}
+    },{
+        $set: {
+            'appointments.$.email': req.query.email,
+            'appointments.$.'
+        }
+    }).then(
+        result => {
+            console.log(result)
+            res.send(res.ok)
+        },
+        err => { res.send(err.message);}
+    ).catch(err =>{ console.log(err); }
+    );
+});
+*/
