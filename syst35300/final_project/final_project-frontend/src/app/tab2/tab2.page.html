@@ -1,0 +1,70 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Tab 2
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Tab 2</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-item-group>
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>
+          Assessment Centre: {{assCentre.location_id}}
+        </ion-card-title>
+        <ion-card-subtitle>
+          {{assCentre.location_name}}
+        </ion-card-subtitle>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-label>{{assCentre.city}} {{assCentre.province}}</ion-label>
+        <ion-label>Active: {{assCentre.active}}</ion-label>
+      </ion-card-content>
+    </ion-card>
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Appointments</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-grid>
+          <ion-row>
+            <ion-col>
+              <ion-button (click)="addAppointment()">Add</ion-button>
+            </ion-col>
+            <ion-col>
+              <ion-button (click)="update()">Update</ion-button>
+            </ion-col>
+            <ion-col>
+              <ion-button (click)="retrieve()">Retrieve</ion-button>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              <ion-button (click)="delete()"></ion-button>
+            </ion-col>
+            <ion-col>
+              <ion-button (click)="deleteAll()"></ion-button>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              <ion-button (click)="export()"></ion-button>
+            </ion-col>
+            <ion-col>
+              <ion-button (click)="clear()"></ion-button>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+          </ion-row>
+        </ion-grid>
+      </ion-card-content>
+    </ion-card>
+  </ion-item-group>
+</ion-content>

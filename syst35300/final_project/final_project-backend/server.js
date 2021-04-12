@@ -78,7 +78,7 @@ app.get('/dbExport', (req, res) => {
 });
 
 app.get('/assessment_centres', (req, res) => {
-    vaccine.find({},{location_id:1, location_name:1})
+    vaccine.find({},{_id:0, appointments:0})
         .then(result => {
             res.send(result);
         }, err => {res.send(err.message);})
