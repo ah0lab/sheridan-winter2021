@@ -30,8 +30,8 @@ app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended: true}))
 app.use((req, res, next) => {
     res.header("Access-Control-Allow-Origin", "*");
-    res.header("Access-Control-Allow-Methods", "PUT, PATCH, DELETE");
-    res.header("Access-Control-Allow-Headers", "Origin, x-Requested-With, Content-Type, Accept");
+    res.header("Access-Control-Allow-Methods", "PUT, PATCH, DELETE, POST");
+    res.header("Access-Control-Allow-Headers", "Origin, x-Requested-With, content-type, Accept");
     next();
 });
 
@@ -59,8 +59,11 @@ app.get('/dbImport', (req, res) => {
 
 app.get('/dbExport', (req, res) => {
     const exec = require('child_process').exec;
+
+    const date = new Date(Date.now());
+    let dateString = `${date.getFullYear()}_${date.getDate()}_${date.getMonth()}`
     // TODO export with date time?
-    const filename = `${Date.now()}-output.json`
+    const filename = `${dateString}-output.json`
     const command = `mongoexport -d ${dbName} -c ${collectionName} -o ${path.resolve(__dirname, 'data', 'export', filename)}`
 
     exec(command, (error, stdout, stderr) => {
@@ -130,19 +133,21 @@ app.get('/assessment_centres/centre/appointments/appointment', (req, res) => {
 // Create a single appointment
 app.post('/assessment_centres/centre/appointments/appointment', (req, res) => {
     // TODO: Add Vaccination appointment under selected center to database
+    console.log(req.body.time);
     vaccine.findOneAndUpdate({
-        location_id: req.query.location_id
+        location_id: req.body.location_id
     },
     {
         $addToSet: { appointments: {
-            date: req.query.date,
-            time: req.query.time,
-            ohip_number: req.query.ohip_number,
-            email: req.query.email
+            date: req.body.date,
+            time: req.body.time,
+            ohip_number: req.body.ohip_number,
+            email: req.body.email
         }}
     }).then(
         result => {
             res.send(res.ok);
+            console.log(result);
         },
         err => { res.send(err.message); }
         ).catch( err => { console.log(err);}
@@ -152,13 +157,34 @@ app.post('/assessment_centres/centre/appointments/appointment', (req, res) => {
 // Function to export one or all appointments from the database.
 //  Filename includes date and time when filename was generated
 app.get('/assessment_centres/centre/appointments/export', (req, res) => {
-    res.send(res.ok);
+    const exec = require('child_process').exec;
+    // TODO export with date time?
+    const date = new Date(Date.now());
+
+    let dateString = `${date.getFullYear()}_${date.getDate()}_${date.getMonth()}`;
+    const filename = `${dateString}-appointments.json`;
+    const command = `mongoexport -d ${dbName} -c ${collectionName} --fields=appointments -o ${path.resolve(__dirname, 'data', 'export', filename)}`
+    //const command = `mongoexport -d ${dbName} -c ${collectionName} -q 'db.vaccine.find({'location_id': ${req.query.location_id}}, {appointments:1)' --jsonArray -o ${path.resolve(__dirname, 'data', 'export', filename)}`
+    console.log(command);
+
+    exec(command, (error, stdout, stderr) => {
+        if(error) {
+            console.log(`error: ${error}`);
+            res.send(error);
+        } else if (stderr) {
+            console.log(`stderr: ${stderr}`);
+            res.send(stderr);
+        } else if (stdout) {
+            console.log(`stdout: ${stdout}`);
+            res.send(stdout);
+        } else { res.send('Error'); }
+    });
 });
 
 // Function to delete all appointments
 app.post('/assessment_centres/centre/appointments/delete', (req, res) => {
     vaccine.findOneAndUpdate({
-        location_id: req.query.location_id
+        location_id: req.body.location_id
     },{
         $set: {appointments: []}
     }).then(
@@ -172,13 +198,17 @@ app.post('/assessment_centres/centre/appointments/delete', (req, res) => {
 
 // Function to delete one appointment
 app.post('/assessment_centres/centre/appointments/appointment/delete', (req,res) =>{
+    if(!req.body) {
+        res.send(500);
+        return;
+    }
     vaccine.findOneAndUpdate({
-        location_id: req.query.location_id,
+        location_id: req.body.location_id,
         //appointments: { $elemMatch: {date: req.query.date, time: req.query.time} }
     }, {
         $pull: { appointments: {
-            date: req.query.date,
-            time: req.query.time
+            date: req.body.date,
+            time: req.body.time
         }}
     }).then(
         result => {

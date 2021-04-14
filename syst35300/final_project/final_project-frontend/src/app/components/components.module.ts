@@ -1,12 +1,15 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
+import { IonicModule } from '@ionic/angular';
+import { AppointmentSelectorComponent } from './appointment-selector/appointment-selector.component';
 
 
 @NgModule({
-  declarations: [],
+  declarations: [AppointmentSelectorComponent],
+  exports: [AppointmentSelectorComponent],
   imports: [
-    CommonModule
+    CommonModule,
+    IonicModule
   ]
 })
 export class ComponentsModule { }

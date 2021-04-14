@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 2
+      Vaccination Appointments
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -14,6 +14,7 @@
   </ion-header>
 
   <ion-item-group>
+
     <ion-card>
       <ion-card-header>
         <ion-card-title>
@@ -28,6 +29,7 @@
         <ion-label>Active: {{assCentre.active}}</ion-label>
       </ion-card-content>
     </ion-card>
+
     <ion-card>
       <ion-card-header>
         <ion-card-title>Appointments</ion-card-title>
@@ -47,23 +49,59 @@
           </ion-row>
           <ion-row>
             <ion-col>
-              <ion-button (click)="delete()"></ion-button>
+              <ion-button (click)="delete()">Delete</ion-button>
             </ion-col>
             <ion-col>
-              <ion-button (click)="deleteAll()"></ion-button>
+              <ion-button (click)="deleteAll()">Delete All</ion-button>
+            </ion-col>
+            <ion-col>
             </ion-col>
           </ion-row>
           <ion-row>
             <ion-col>
-              <ion-button (click)="export()"></ion-button>
+              <ion-button (click)="export()">Export</ion-button>
             </ion-col>
             <ion-col>
-              <ion-button (click)="clear()"></ion-button>
+              <ion-button (click)="clear()">Clear</ion-button>
+            </ion-col>
+            <ion-col>
             </ion-col>
           </ion-row>
           <ion-row>
           </ion-row>
         </ion-grid>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card>
+      <ion-card-title>
+        Centre: {{assCentre.location_id}}
+      </ion-card-title>
+      <ion-card-content>
+        <ion-item>
+          <ion-label>Date</ion-label>
+          <ion-input required type="date"
+                     [(ngModel)]="selectedApp.date">
+          </ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label>Time</ion-label>
+          <ion-input required type="time"
+                     [(ngModel)]="selectedApp.time">
+          </ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label>OHIP #</ion-label>
+          <ion-input type="text"
+                     [(ngModel)]="selectedApp.ohip_number">
+          </ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label>Email</ion-label>
+          <ion-input type="email"
+                     [(ngModel)]="selectedApp.email">
+          </ion-input>
+        </ion-item>
       </ion-card-content>
     </ion-card>
   </ion-item-group>
