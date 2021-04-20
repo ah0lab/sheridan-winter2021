@@ -6,6 +6,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BA_A2", "BA_A2\BA_A2.csproj
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BA_MT", "BA_MT\BA_MT.csproj", "{4C622A11-04E5-412B-A6C2-9959FAAF14BB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ManagerMVC", "FinalExam\ManagerMVC\ManagerMVC.csproj", "{5439347F-47C2-44F4-A89C-151285AA6AB5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ManagerMVCTest", "ManagerMVCTest\ManagerMVCTest.csproj", "{03D1D16C-6CF9-40BD-8578-C64A283FCA11}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +28,13 @@ Global
 		{4C622A11-04E5-412B-A6C2-9959FAAF14BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4C622A11-04E5-412B-A6C2-9959FAAF14BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4C622A11-04E5-412B-A6C2-9959FAAF14BB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5439347F-47C2-44F4-A89C-151285AA6AB5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5439347F-47C2-44F4-A89C-151285AA6AB5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5439347F-47C2-44F4-A89C-151285AA6AB5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5439347F-47C2-44F4-A89C-151285AA6AB5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{03D1D16C-6CF9-40BD-8578-C64A283FCA11}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{03D1D16C-6CF9-40BD-8578-C64A283FCA11}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{03D1D16C-6CF9-40BD-8578-C64A283FCA11}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{03D1D16C-6CF9-40BD-8578-C64A283FCA11}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
