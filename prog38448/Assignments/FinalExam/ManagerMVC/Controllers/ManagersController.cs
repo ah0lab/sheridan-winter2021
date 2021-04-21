@@ -5,10 +5,19 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
+using ManagerMVC.Models;
+
 namespace ManagerMVC.Controllers
 {
-    public class ManagersController : Controller
+    public class DetailsAc_Returns_Bad_ReRequestManagersController : Controller
     {
+        private IManagerRepo _repo;
+
+        public DetailsAc_Returns_Bad_ReRequestManagersController(IManagerRepo repo)
+        {
+            _repo = repo;
+        }
+        
         // GET: ManagersController
         public ActionResult Index()
         {
@@ -16,7 +25,7 @@ namespace ManagerMVC.Controllers
         }
 
         // GET: ManagersController/Details/5
-        public ActionResult Details(int id)
+        public ActionResult Details(int? id)
         {
             return View();
         }

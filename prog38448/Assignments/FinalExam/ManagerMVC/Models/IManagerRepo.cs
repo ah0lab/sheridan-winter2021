@@ -5,7 +5,8 @@ using System.Threading.Tasks;
 
 namespace ManagerMVC.Models
 {
-    interface IManagerRepo
+    public interface IManagerRepo
     {
+        public Manager GetById(int id);
     }
 }
