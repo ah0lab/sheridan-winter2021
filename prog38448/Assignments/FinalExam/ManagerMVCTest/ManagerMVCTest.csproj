@@ -21,6 +21,7 @@
     </ItemGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\..\..\..\..\..\..\..\..\..\tmp\ManagerMVC\ManagerMVC.csproj" />
       <ProjectReference Include="..\ManagerMVC\ManagerMVC.csproj" />
     </ItemGroup>
 

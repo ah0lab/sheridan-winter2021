@@ -10,6 +10,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ManagerMVC", "FinalExam\Man
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ManagerMVCTest", "FinalExam\ManagerMVCTest\ManagerMVCTest.csproj", "{1BC9B70E-2B45-4775-BED0-CDF146ACD8EE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ManagerMVC", "..\..\..\..\..\..\..\..\tmp\ManagerMVC\ManagerMVC.csproj", "{60829637-9D76-4CD9-86ED-5ECB32F7CCA0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -36,5 +38,9 @@ Global
 		{1BC9B70E-2B45-4775-BED0-CDF146ACD8EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1BC9B70E-2B45-4775-BED0-CDF146ACD8EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1BC9B70E-2B45-4775-BED0-CDF146ACD8EE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{60829637-9D76-4CD9-86ED-5ECB32F7CCA0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{60829637-9D76-4CD9-86ED-5ECB32F7CCA0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{60829637-9D76-4CD9-86ED-5ECB32F7CCA0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{60829637-9D76-4CD9-86ED-5ECB32F7CCA0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

@@ -17,7 +17,7 @@ namespace ManagerMVCTest
             //Arrange
             var mock = new Mock<IManagerRepo>();
             mock.Setup(repo => repo);
-            var controller = new DetailsAc_Returns_Bad_ReRequestManagersController(mock.Object);
+            var controller = new ManagersController(mock.Object);
             int ExpectedStatusCode = (int) HttpStatusCode.BadRequest;
 
             //Act
@@ -39,7 +39,7 @@ namespace ManagerMVCTest
                 FirstName = "Ben",
                 LastName = "Ahola"
             });
-            var controller = new DetailsAc_Returns_Bad_ReRequestManagersController(mock.Object);
+            var controller = new ManagersController(mock.Object);
             Type ExpectedModelType = typeof(Manager);
             int ExpectedManagerId = 5;
             
